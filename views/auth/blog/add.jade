@@ -14,19 +14,11 @@ block content
 			.form_title Заголовок:
 			input.ru(type="text", name="ru[title]",)
 			input.en(type="text", name="en[title]", disabled)
-			.form_title Подзаголовок:
-			input.ru(type="text", name="ru[s_title]",)
-			input.en(type="text", name="en[s_title]", disabled)
-			.form_title Цитата:
-			input.ru(type="text", name="ru[quote]",)
-			input.en(type="text", name="en[quote]", disabled)
 			.form_title Описание:
 			textarea.ru(name="ru[body]", rows="8",)
 			textarea.en(name="en[body]", rows="8", disabled)
-			.snake
-				input(type="file", name="photo")
-			input.plus(type="button", value="-")
-			input.minus(type="button", value="+")
+			.form_title Картинка:
+			input(type="file", name="image")
 			.form_title Категория:
 			select(name='tag')
 				option(value='design') дизайн
