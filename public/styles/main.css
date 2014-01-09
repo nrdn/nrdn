@@ -1,0 +1,9 @@
+@font-face {
+	font-family: MyraR;
+	src: url('/fonts/myra_regular.ttf');
+}
+
+@font-face {
+	font-family: MyraL;
+	src: url('/fonts/myra_light.ttf');
+}

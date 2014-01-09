@@ -1,0 +1,22 @@
+{
+  "name": "plasma",
+  "version": "0.0.0",
+  "description": "nrdn ======",
+  "main": "app.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "express": "~3.4.7",
+    "async": "~0.2.9",
+    "gm": "~1.14.2",
+    "jade": "~1.1.3",
+    "mongoose": "~3.8.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
