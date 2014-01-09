@@ -7,3 +7,17 @@
 	font-family: MyraL;
 	src: url('/fonts/myra_light.ttf');
 }
+
+.menu_block {
+	width: 90%;
+	height: 30px;
+	position: fixed;
+	left: 50%;
+	margin-left: -45%;
+	background-color: #449F98;
+	text-align: center;
+}
+
+.menu_block a {
+	margin-right: 5%;
+}
