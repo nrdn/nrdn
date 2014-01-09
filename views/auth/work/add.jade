@@ -19,21 +19,25 @@ block content
 			.form_title Описание:
 			textarea.ru(name="ru[description]", rows="8",)
 			textarea.en(name="en[description]", rows="8", disabled)
-			.form_title Фото:
-			.img_upload
-				.img_item
-					.img_preview
-						.img_delete x
-					.img_description(contenteditable) fff
-				.img_item
-					.img_preview
-						.img_delete x
-					.img_description(contenteditable) ccc
 			.form_title Категория:
 			select(name='tag')
-				option(value='design') графический дизайн
-				option(value='graphic') графика
-				option(value='art') живопись
+				option(value='design') Урбанизм
+				option(value='graphic') Архитектура
+				option(value='art') Городские проекты
+				option(value='graphic') Выставки
+				option(value='graphic') Промышленный дизайн
+				option(value='graphic') Навигация
+				option(value='graphic') Графический дизайн
+			.form_title Фото:
+			.img_upload
+				//- .img_item
+				//- 	.img_preview
+				//- 		.img_delete x
+				//- 	.img_description(contenteditable) fff
+				//- .img_item
+				//- 	.img_preview
+				//- 		.img_delete x
+				//- 	.img_description(contenteditable) ccc
 			br
 			input(type='button', class='toggle_eng', value='Перевод')
 			input(type="submit", value="Добавить")

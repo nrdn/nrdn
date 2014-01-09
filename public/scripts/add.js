@@ -2,9 +2,9 @@ $(document).ready(function() {
 	var eng = true;
 	var count = 0;
 
-	$('.img_upload').sortable({cancel: '.img_delete, .img_description'});
+	$('.img_upload').sortable({cancel: '.img_delete, .img_description, .file'});
 
-	$('.img_preview').mfupload({
+	$('.img_upload').mfupload({
 
 		type		: 'jpg,png,tif,jpeg',
 		maxsize		: 6,
@@ -18,9 +18,10 @@ $(document).ready(function() {
 		init		: function(){ },
 		start		: function(result){ },
 		loaded		: function(result) {
-			// $(this).css('background-color', 'red');
-			$('.img_preview').eq(1).css('background-image', 'url(' + result.path + ')');
-			// img_preview = result.path;
+			var item = $('<div />', {'class':'img_item'});
+			var prev = $('<div />', {'class':'img_preview'}).css('background-image', 'url(' + result.path + ')');
+			var desc = $('<div />', {'class':'img_description', 'contenteditable':true, 'text':'описание'});
+			$('.img_upload').append(item.append(prev, desc));
 		},
 		progress	: function(result){ },
 		error		: function(error){ },

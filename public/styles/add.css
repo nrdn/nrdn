@@ -45,10 +45,13 @@ textarea {
 }
 
 .img_upload {
+	min-height: 300px;
 	overflow: hidden;
+	background-color: #69918a;
 }
 
 .img_item {
 	float: left;
-	margin-right: 20px;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
