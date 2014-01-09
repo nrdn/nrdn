@@ -5,6 +5,8 @@ block content_style
 
 block content_scripts
 	script(type='text/javascript', src='/scripts/add.js')
+	script(type='text/javascript', src='/scripts/mfupload.js')
+	script(type='text/javascript', src='/scripts/jquery-ui-1.10.3.custom.min.js')
 
 block content
 	.form_block
@@ -18,7 +20,15 @@ block content
 			textarea.ru(name="ru[description]", rows="8",)
 			textarea.en(name="en[description]", rows="8", disabled)
 			.form_title Фото:
-			input(type="file", name="image")
+			.img_upload
+				.img_item
+					.img_preview
+						.img_delete x
+					.img_description(contenteditable) fff
+				.img_item
+					.img_preview
+						.img_delete x
+					.img_description(contenteditable) ccc
 			.form_title Категория:
 			select(name='tag')
 				option(value='design') графический дизайн

@@ -47,7 +47,10 @@ var workSchema = new Schema({
     title: String,
     description: String
   },
-  image: String,
+  images: [{
+      path: String,
+      description: String
+    }],
   date: {type: Date, default: Date.now}
 });
 
@@ -83,6 +86,21 @@ function checkAuth (req, res, next) {
     res.redirect('/login');
 }
 
+
+// ------------------------
+// *** Post Params Block ***
+// ------------------------
+
+app.post('/edit', function (req, res) {
+  var files = req.files;
+  var name = files.mf_file_undefined.path.slice(33);
+  var newPath = __dirname + '/public/preview/' + name;
+
+  gm(files.mf_file_undefined.path).resize(1120, false).quality(60).noProfile().write(newPath, function() {
+    var path = {'path':'/preview/' + name}
+    res.send(path);
+  });
+});
 
 // ------------------------
 // *** Main Block ***

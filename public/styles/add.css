@@ -24,3 +24,31 @@ textarea {
 	width: 400px;
 	display: none;
 }
+
+.img_preview {
+	width: 350px;
+	height: 200px;
+	background-color: green;
+}
+
+.img_delete {
+	float: right;
+	cursor: pointer;
+	font-size: 14pt;
+}
+
+.img_description {
+	width: 350px;
+	height: 200px;
+	background-color: grey;
+	outline: none;
+}
+
+.img_upload {
+	overflow: hidden;
+}
+
+.img_item {
+	float: left;
+	margin-right: 20px;
+}
