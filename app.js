@@ -40,9 +40,11 @@ var userSchema = new Schema({
 var workSchema = new Schema({
   tag: String,
   ru: {
+    title: String,
     description: String
   },
   en: {
+    title: String,
     description: String
   },
   image: String,
@@ -187,7 +189,7 @@ app.get('/auth/add/work', checkAuth, function (req, res) {
 app.get('/auth/edit/works', checkAuth, function (req, res) {
 
   Work.find().sort('-date').exec(function(err, works) {
-    res.render('auth/blog/list.jade', {works: works});
+    res.render('auth/work/list.jade', {works: works});
   });
 });
 
@@ -224,9 +226,12 @@ app.post('/auth/add/work', function (req, res) {
   var work = new Work();
 
   work.tag = post.tag;
+  work.ru.title = post.ru.title;
   work.ru.description = post.ru.description;
-  if (post.en)
+  if (post.en) {
+    work.en.title = post.en.title;
     work.en.description = post.en.description;
+  }
 
   if (files.image.size != 0) {
     var newPath = __dirname + '/public/images/works/' + work._id + '.jpg';
@@ -253,9 +258,12 @@ app.post('/auth/edit/work/:id', function (req, res) {
 
   Work.findById(id, function(err, work) {
     work.tag = post.tag;
+    work.ru.title = post.ru.title;
     work.ru.description = post.ru.description;
-    if (post.en)
+    if (post.en) {
+      work.en.title = post.en.title;
       work.en.description = post.en.description;
+    }
 
     if (files.image.size != 0) {
       var newPath = __dirname + '/public/images/works/' + work._id + '.jpg';
@@ -281,12 +289,13 @@ app.post('/auth/add/post', function (req, res) {
   var files = req.files;
   var b_post = new Post();
 
-  b_post.tag = b_post.tag;
-  b_post.ru.title = b_post.ru.title;
-  b_post.ru.body = b_post.ru.body;
+  b_post.tag = post.tag;
+  b_post.ru.title = post.ru.title;
+  b_post.ru.body = post.ru.body;
+
   if (post.en) {
-    b_post.en.title = b_post.en.title;
-    b_post.en.body = b_post.en.body;
+    b_post.en.title = post.en.title;
+    b_post.en.body = post.en.body;
   }
 
   if (files.image.size != 0) {

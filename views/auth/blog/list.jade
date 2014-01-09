@@ -1,3 +1,8 @@
 extends ../../layout
 
 block content
+	h1 Список постов
+	each post in posts
+		b= post.ru.title
+		br
+		img(src=post.image)

@@ -11,11 +11,14 @@ block content
 		a.back_link(href='/auth') < Назад
 		.title ДОБАВИТЬ РАБОТУ
 		form(action="/auth/add/work", method="post", enctype="multipart/form-data")
+			.form_title Заголовок:
+			input.ru(type="text", name="ru[title]",)
+			input.en(type="text", name="en[title]", disabled)
 			.form_title Описание:
 			textarea.ru(name="ru[description]", rows="8",)
 			textarea.en(name="en[description]", rows="8", disabled)
 			.form_title Фото:
-			input(type="file", name="photo")
+			input(type="file", name="image")
 			.form_title Категория:
 			select(name='tag')
 				option(value='design') графический дизайн

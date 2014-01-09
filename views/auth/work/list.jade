@@ -3,3 +3,8 @@ extends ../../layout
 
 
 block content
+	h1 Список работ
+	each work in works
+		b= work.ru.title
+		br
+		img(src=work.image)
