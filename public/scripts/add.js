@@ -19,7 +19,8 @@ $(document).ready(function() {
 		start		: function(result){ },
 		loaded		: function(result) {
 			var item = $('<div />', {'class':'img_item'});
-			var prev = $('<div />', {'class':'img_preview'}).css('background-image', 'url(' + result.path + ')');
+			// var prev = $('<div />', {'class':'img_preview'}).css('background-image', 'url(' + result.path + ')');
+			var prev = $('<img />', {'class':'img_preview', 'src':result.path});
 			var desc = $('<div />', {'class':'img_description', 'contenteditable':true, 'text':'описание'});
 			$('.img_upload').append(item.append(prev, desc));
 		},
@@ -28,6 +29,18 @@ $(document).ready(function() {
 		completed	: function(){ }
 
 	});
+
+
+	$(document).on('dblclick', '.img_preview', function() {
+		var path = $(this).attr('src');
+		var th_elem = $(this);
+
+		$.post('/rm_prev', {path:path}).done(function(data) {
+			th_elem.parent('.img_item').remove();
+		});
+	});
+
+
 
 	function toggleEnglish () {
 		if (eng = !eng) {

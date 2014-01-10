@@ -93,12 +93,21 @@ function checkAuth (req, res, next) {
 
 app.post('/edit', function (req, res) {
   var files = req.files;
-  var name = files.mf_file_undefined.path.slice(33);
+  var name = new Date().getTime();
+  var ext = files.mf_file_undefined.type.slice(6);
   var newPath = __dirname + '/public/preview/' + name;
 
   gm(files.mf_file_undefined.path).resize(1120, false).quality(60).noProfile().write(newPath, function() {
     var path = {'path':'/preview/' + name}
     res.send(path);
+  });
+});
+
+app.post('/rm_prev', function (req, res) {
+  var path = req.body.path;
+
+  fs.unlink(__dirname + '/public' + path, function() {
+    res.send('ok');
   });
 });
 

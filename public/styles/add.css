@@ -31,12 +31,6 @@ textarea {
 	background-color: green;
 }
 
-.img_delete {
-	float: right;
-	cursor: pointer;
-	font-size: 14pt;
-}
-
 .img_description {
 	width: 350px;
 	height: 200px;
