@@ -251,10 +251,9 @@ app.post('/auth/add/work', function (req, res) {
   var post = req.body;
   var files = req.files;
   var work = new Work();
-  console.log(post);
+  var dir = __dirname + '/public/images/works/' + work._id;
 
   work.tag = post.tag;
-  work.images = post.images;
   work.ru.title = post.ru.title;
   work.ru.description = post.ru.description;
   if (post.en) {
@@ -262,8 +261,22 @@ app.post('/auth/add/work', function (req, res) {
     work.en.description = post.en.description;
   }
 
-  work.save(function(err) {
-    res.redirect('back');
+  fs.mkdir(dir, function() {
+    async.forEach(post.images, function(image, callback) {
+      var newPath = dir + '/' + image.path.slice(9);
+      var pubPath = '/images/works/' + work._id + '/' + image.path.slice(9);
+
+      fs.rename(image.path, newPath, function() {
+        image.path = pubPath;
+        callback();
+      });
+    }, function() {
+      work.images = post.images;
+      console.log(post.images)
+      work.save(function(err) {
+        res.redirect('back');
+      });
+    });
   });
 });
 
