@@ -31,6 +31,19 @@ textarea {
 	background-color: green;
 }
 
+.title, .description {
+	font-size: 18pt;
+}
+
+.sub {
+	cursor: pointer;
+	font-size: 16pt;
+}
+
+.sub:hover {
+	text-decoration: underline;
+}
+
 .img_description {
 	width: 350px;
 	height: 200px;

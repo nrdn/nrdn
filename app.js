@@ -251,8 +251,10 @@ app.post('/auth/add/work', function (req, res) {
   var post = req.body;
   var files = req.files;
   var work = new Work();
+  console.log(post);
 
   work.tag = post.tag;
+  work.images = post.images;
   work.ru.title = post.ru.title;
   work.ru.description = post.ru.description;
   if (post.en) {
@@ -260,22 +262,9 @@ app.post('/auth/add/work', function (req, res) {
     work.en.description = post.en.description;
   }
 
-  if (files.image.size != 0) {
-    var newPath = __dirname + '/public/images/works/' + work._id + '.jpg';
-    gm(files.image.path).resize(1600, false).quality(80).noProfile().write(newPath, function() {
-      work.image = '/images/works/' + work._id + '.jpg';
-      work.save(function() {
-        fs.unlink(files.image.path);
-        res.redirect('back');
-      });
-    });
-  }
-  else {
-    work.save(function() {
-      fs.unlink(files.image.path);
-      res.redirect('back');
-    });
-  }
+  work.save(function(err) {
+    res.redirect('back');
+  });
 });
 
 app.post('/auth/edit/work/:id', function (req, res) {

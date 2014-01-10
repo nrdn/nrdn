@@ -17,6 +17,7 @@
 	margin-left: -45%;
 	background-color: #449F98;
 	text-align: center;
+	z-index: 100;
 }
 
 .menu_block a {
