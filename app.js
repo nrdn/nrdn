@@ -86,6 +86,13 @@ function checkAuth (req, res, next) {
     res.redirect('/login');
 }
 
+function backgroundWorks (req, res, next) {
+  Work.find().sort('-date').limit(4).exec(function(err, works) {
+    res.locals.works = works;
+    next();
+  });
+}
+
 
 // ------------------------
 // *** Post Params Block ***
@@ -116,7 +123,7 @@ app.post('/rm_prev', function (req, res) {
 // ------------------------
 
 
-app.get('/', function(req, res) {
+app.get('/', backgroundWorks, function(req, res) {
 
   Work.find().sort('-date').exec(function(err, works) {
     res.render('index', {works: works});
@@ -263,16 +270,16 @@ app.post('/auth/add/work', function (req, res) {
 
   fs.mkdir(dir, function() {
     async.forEach(post.images, function(image, callback) {
+      var oldPath = __dirname + '/public' + image.path;
       var newPath = dir + '/' + image.path.slice(9);
       var pubPath = '/images/works/' + work._id + '/' + image.path.slice(9);
 
-      fs.rename(image.path, newPath, function() {
+      fs.rename(oldPath, newPath, function() {
         image.path = pubPath;
         callback();
       });
     }, function() {
       work.images = post.images;
-      console.log(post.images)
       work.save(function(err) {
         res.redirect('back');
       });

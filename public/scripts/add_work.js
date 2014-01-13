@@ -60,10 +60,9 @@ $(document).ready(function() {
 			images: images,
 			tag: tag
 		};
-		console.log(data.images)
 
 		$.post('/auth/add/work', data).done(function(data) {
-			// alert(title)
+			location.reload();
 		});
 	});
 });

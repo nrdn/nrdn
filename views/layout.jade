@@ -3,6 +3,10 @@ html
 	head
 		include header
 	body
+		if (works)
+			.background_works
+				each work in works
+					.background_item(style='background-image: url(' + work.images[0].path + ')')
 		.maket
 			.main_block
 				.menu_block
