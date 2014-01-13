@@ -1,0 +1,32 @@
+.content_block {
+	margin-top: 150px;
+	text-align: center;
+}
+
+.logo_block {
+	width: 60px;
+	height: 60px;
+}
+
+.works_block {
+	width: 420px;
+	/*min-height: 150px;*/
+	margin: 0 auto;
+	color: white;
+}
+
+.work_item {
+	display: none;
+}
+
+.work_title {
+	font-size: 26pt;
+	text-transform: uppercase;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+}
+
+.work_tag {
+	font-size: 20pt;
+	text-transform: uppercase;
+}
