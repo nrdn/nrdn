@@ -1,0 +1,22 @@
+.post_item_block {
+	margin-bottom: 100px;
+}
+
+.post_img {
+	width: 100%;
+	height: auto;
+}
+
+.post_title_block {
+	margin-left: 5%;
+	float: left;
+}
+
+.title {
+	width: 250px;
+	outline: 1px solid black;
+}
+
+.post_body {
+	margin-left: 38%;
+}

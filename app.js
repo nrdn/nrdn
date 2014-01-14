@@ -87,7 +87,7 @@ function checkAuth (req, res, next) {
 }
 
 function backgroundWorks (req, res, next) {
-  Work.find().sort('-date').limit(4).exec(function(err, works) {
+  Work.find().sort('date').limit(4).exec(function(err, works) {
     res.locals.works = works;
     next();
   });

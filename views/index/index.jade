@@ -15,4 +15,5 @@ block content
 		each work in works
 			.work_item
 				.work_tag= work.tag
-				.work_title= work.ru.title
+				.work_title
+					a(href='/works/' + work._id)= work.ru.title
