@@ -7,16 +7,28 @@
 	height: auto;
 }
 
-.post_title_block {
+.post_title {
 	margin-left: 5%;
 	float: left;
-}
-
-.title {
-	width: 250px;
-	outline: 1px solid black;
+	font-size: 16pt;
+	text-transform: uppercase;
 }
 
 .post_body {
 	margin-left: 38%;
+	/*clear: both;*/
+}
+
+.post_social {
+	margin-left: 5%;
+	width: 100px;
+}
+
+@media screen and (max-width: 419px) {
+
+.post_body {
+	clear: both;
+	margin-left: 5%;
+}
+
 }
