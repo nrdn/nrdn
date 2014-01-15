@@ -26,9 +26,8 @@
 
 @media screen and (max-width: 419px) {
 
-.post_body {
-	clear: both;
-	margin-left: 5%;
-}
-
+	.post_body {
+		clear: both;
+		margin-left: 5%;
+	}
 }

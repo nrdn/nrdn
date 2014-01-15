@@ -38,20 +38,82 @@ body {
 	z-index: 100;
 }
 
-.menu_block a {
-	margin-right: 5%;
+.left_menu a, .right_menu a {
 	text-decoration: none;
 	color: white;
 }
 
-.menu_block a:last-child {
-	margin-right: 0;
+.right_menu, .left_menu, .menu_block img {
+	outline: 1px solid black;
+}
+
+
+
+
+
+
+
+
+/*.left_menu {
+	display: inline;
+}
+
+.right_menu {
+	display: inline;
+}
+
+.left_menu a {
+	margin-right: 5%;
+}
+
+.right_menu a {
+	margin-left: 5%;
 }
 
 .menu_block img {
-	width: 20px;
-	height: 20px;
+	width: 24px;
+	height: 24px;
+	display: inline;
+}*/
+
+.menu_block {
+	overflow:hidden;
+	white-space:nowrap;
 }
+
+.menu_block>a, .menu_block>.right_menu, .menu_block>.left_menu {
+	float:left;
+	display:block;
+	width:48%;
+}
+
+.menu_block>.left_menu {
+	min-width:150px;
+	text-align:right;
+}
+
+.menu_block>.right_menu {
+	text-align:left;
+}
+
+.menu_block>a {
+	width:4%;
+	min-width:25px;
+}
+
+.menu_block>.right_menu>a, .menu_block>.left_menu>a {
+	margin:0 5%;
+}
+
+.menu_block img {
+	width: 24px;
+	height: 24px;
+}
+
+
+
+
+
 
 .content_block {
 	width: 100%;
