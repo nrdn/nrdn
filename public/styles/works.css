@@ -1,0 +1,37 @@
+.content_block {
+	left: 50%;
+	margin-left: -45%;
+	width: 90%;
+	outline: none;
+}
+
+.work_item {
+	width: 18.9%;
+	height: 18.9%;
+	float: left;
+	margin-right: 1.5%;
+	margin-bottom: 1.5%;
+}
+
+.work_item:last-child {
+	margin-right: 0;
+}
+
+.work_item {
+   position: relative;
+}
+
+.work_item:before {
+   content: '';
+   display: block;
+   padding: 100% 100% 0 0;
+}
+
+.work_inner {
+   position: absolute;
+   left: 0px;
+   right: 0px;
+   top: 0px;
+   bottom: 0px;
+   background: green;
+}
