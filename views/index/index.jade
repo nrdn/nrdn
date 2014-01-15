@@ -9,6 +9,11 @@ block content_style
 block content_scripts
 	script(type='text/javascript', src='/scripts/main.js' + version)
 
+block append works_bg
+	.background_works
+		each work in works
+			.background_item(style='background-image: url(' + work.images[0].path + ')')
+
 block content
 	img.logo_block(src='images/design/logo.png')
 	.works_block

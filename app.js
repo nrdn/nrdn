@@ -86,13 +86,6 @@ function checkAuth (req, res, next) {
     res.redirect('/login');
 }
 
-function backgroundWorks (req, res, next) {
-  Work.find().sort('date').limit(4).exec(function(err, works) {
-    res.locals.works = works;
-    next();
-  });
-}
-
 
 // ------------------------
 // *** Post Params Block ***
@@ -123,7 +116,7 @@ app.post('/rm_prev', function (req, res) {
 // ------------------------
 
 
-app.get('/', backgroundWorks, function(req, res) {
+app.get('/', function(req, res) {
 
   Work.find().sort('-date').exec(function(err, works) {
     res.render('index', {works: works});
