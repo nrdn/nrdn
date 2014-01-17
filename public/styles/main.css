@@ -1,11 +1,16 @@
 @font-face {
-	font-family: MyraR;
-	src: url('/fonts/myra_regular.ttf');
+	font-family: Roboto;
+	src: url('/fonts/Roboto-Regular.ttf');
 }
 
 @font-face {
-	font-family: MyraL;
-	src: url('/fonts/myra_light.ttf');
+	font-family: RobotoM;
+	src: url('/fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+	font-family: RobotoB;
+	src: url('/fonts/Roboto-Bold.ttf');
 }
 
 html, body, .maket {
@@ -73,6 +78,11 @@ body {
 .menu_block a {
 	width: 4%;
 	min-width: 25px;
+	font: 11pt/22pt 'Roboto';
+}
+
+.menu_block a:hover {
+	text-decoration: underline;
 }
 
 .right_menu a, .left_menu a {

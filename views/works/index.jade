@@ -10,8 +10,9 @@ block content_scripts
 	script(type='text/javascript', src='/scripts/works.js' + version)
 
 block content
-	each work in works
-		.work_item
-			.work_inner
-				.work_title= work.ru.title
-				.work_tag= work.tag
+	.works_block
+		each work in works
+			.work_item
+				.work_inner(style='background-image: url(/images/design/logo4.png)')
+					.work_title= work.ru.title
+					.work_tag= work.tag
