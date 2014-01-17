@@ -11,8 +11,9 @@ block content_scripts
 
 block content
 	.works_block
+		- tags = {'urbanism':'Урбанизм', 'architecture':'Архитектура', 'urban_projects':'Городские проекты', 'exhibitions':'Выставки', 'industrial_design':'Промышленный дизайн', 'navigation':'Навигация', 'graphic_design':'Графический дизайн'}
 		each work in works
-			.work_item
+			.work_item(class=work.tag)
 				.work_inner(style='background-image: url(/images/design/logo4.png)')
 					.work_title= work.ru.title
-					.work_tag= work.tag
+					.work_tag= tags[work.tag]
