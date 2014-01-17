@@ -1,5 +1,6 @@
 .post_item_block {
 	margin-bottom: 100px;
+	outline: 1px solid black;
 }
 
 .post_img {
@@ -8,20 +9,26 @@
 }
 
 .post_title {
+	margin-top: 5px;
 	margin-left: 5%;
 	float: left;
-	font-size: 16pt;
+	font: 16pt/18pt 'RobotoB';
 	text-transform: uppercase;
+	outline: 1px solid black;
 }
 
 .post_body {
-	margin-left: 38%;
-	/*clear: both;*/
+	width: 63%;
+	margin-top: 9px;
+	margin-left: 32%;
+	font: 12pt/14pt 'Roboto';
+	outline: 1px solid black;
 }
 
 .post_social {
-	margin-left: 5%;
+	margin-left: 4.9%;
 	width: 100px;
+	outline: 1px solid black;
 }
 
 @media screen and (max-width: 419px) {

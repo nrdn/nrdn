@@ -8,17 +8,18 @@
 .works_block {
 	width: 100%;
 	overflow: auto;
+	/*outline: 1px solid black;*/
 }
 
 .work_item {
-	width: 18.5%;
-	height: 18.5%;
+	width: 18.9%;
+	height: 18.9%;
 	float: left;
 	/*margin-right: 1.25%;*/
 	/*outline: 1px solid black;*/
 }
 
-.work_item:last-child {
+.work_item:nth-child(5n) {
 	margin-right: 0;
 }
 
@@ -29,7 +30,7 @@
    margin-right: 1.5%;
 }
 
-.bg_red {
+.bg_urbanism {
 	background: red;
 }
 
@@ -45,8 +46,9 @@
    right: 0px;
    top: 3px;
    bottom: 0px;
-   background: 50% 50%;
+   background: 51% 50%;
    background-size: 150%;
+   background-repeat: no-repeat;
    /*outline: 1px solid black;*/
 }
 
