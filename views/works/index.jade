@@ -12,9 +12,9 @@ block content_scripts
 block content
 	.works_block
 		each work in works
-			.work_item(class=work.tag)
+			a.work_item(href='/works/' + work._id, class=work.tag)
 				.work_images
 					each image in work.images
 						.work_image(style='background-image: url(' + image.path + ')')
-				a(href='/works/' + work._id).work_logo 
+				.work_logo 
 				.work_title= work.ru.title

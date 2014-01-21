@@ -16,6 +16,8 @@
 	margin-bottom: 20px;
 	margin-right: 20px;
 	float: left;
+	text-decoration: none;
+	color: black;
 	/*outline: 1px solid black;*/
 }
 
@@ -55,7 +57,6 @@
 	width: 75px;
 	height: 75px;
 	display: block;
-	text-decoration: none;
 	position: relative;
 	margin:0 auto;
 	/*background-color: green;*/
@@ -81,4 +82,5 @@
 	height: 120px;
 	position: absolute;
 	background-size: cover;
+	background-position: center;
 }
