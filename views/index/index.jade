@@ -17,8 +17,9 @@ block append works_bg
 block content
 	img.logo_block(src='images/design/logo3.png')
 	.works_block
+		- tags = {'urbanism':'Урбанизм', 'architecture':'Архитектура', 'urban_projects':'Городские проекты', 'exhibitions':'Выставки', 'industrial_design':'Промышленный дизайн', 'navigation':'Навигация', 'graphic_design':'Графический дизайн'}
 		each work in works
 			.work_item
-				.work_tag= work.tag
+				.work_tag= tags[work.tag]
 				.work_title
 					a(href='/works/' + work._id)= work.ru.title

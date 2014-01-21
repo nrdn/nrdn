@@ -13,6 +13,11 @@
 	src: url('/fonts/Roboto-Bold.ttf');
 }
 
+@font-face {
+	font-family: Fontello;
+	src: url('/fonts/fontello.ttf');
+}
+
 html, body, .maket {
 	height: 100%;
 }
@@ -32,61 +37,27 @@ body {
 }
 
 .menu_block {
-	width: 90%;
+	width: 1240px;
 	height: 30px;
 	margin-top: 20px;
 	position: fixed;
 	left: 50%;
-	margin-left: -45%;
-	background-color: #449F98;
+	margin-left: -620px;
+	background-color: white;
+	border: 1px solid black;
 	text-align: center;
 	z-index: 100;
 }
 
-.left_menu a, .right_menu a {
-	text-decoration: none;
-	color: white;
-}
-
-/*.right_menu, .left_menu, .menu_block img {
-	outline: 1px solid black;
-}*/
-
-
-
-.menu_block {
-	overflow:hidden;
-	white-space:nowrap;
-}
-
-.menu_block>a, .menu_block>.right_menu, .menu_block>.left_menu {
-	float:left;
-	display:block;
-	width: 48%;
-}
-
-.left_menu {
-	min-width: 150px;
-	text-align:right;
-}
-
-.right_menu {
-	min-width: 60px;
-	text-align:left;
-}
-
 .menu_block a {
-	width: 4%;
-	min-width: 25px;
+	margin-right: 45px;
 	font: 11pt/22pt 'Roboto';
+	text-decoration: none;
+	color: black;
 }
 
 .menu_block a:hover {
 	text-decoration: underline;
-}
-
-.right_menu a, .left_menu a {
-	margin:0 5%;
 }
 
 .menu_block img {
