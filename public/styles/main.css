@@ -53,10 +53,11 @@ body {
 	position: fixed;
 	left: 50%;
 	margin-left: -620px;
-	background-color: white;
+	background-color: rgba(255,255,255,0.7);
 	/*border: 1px solid black;*/
 	text-align: center;
 	z-index: 100;
+
 }
 
 .menu_block a {
@@ -70,9 +71,10 @@ body {
 	text-decoration: underline;
 }
 
-.menu_block img {
-	width: 24px;
-	height: 24px;
+.menu_block .logo {
+	font: 22px/22px 'Fontello';
+	color: black;
+	text-decoration: none;
 }
 
 
