@@ -24,10 +24,11 @@
 }
 
 .work_title {
-	font-size: 26pt;
+	font: 28pt/28pt 'Roboto';
 	text-transform: uppercase;
 	border-top: 1px solid white;
-	border-bottom: 1px solid white;
+	padding-top: 5px;
+	/*border-bottom: 1px solid white;*/
 }
 
 .work_title a {
@@ -42,6 +43,7 @@
 
 
 .work_tag {
-	font-size: 20pt;
+	padding-bottom: 8px;
+	font: 18pt/20pt 'RobotoT';
 	text-transform: uppercase;
 }
