@@ -34,12 +34,16 @@ $(document).ready(function() {
 			}
 		}
 	});
-	$('.sort_item.tags').click(function(event) {
+
+	$('.sort_item.tags').click(function() {
 		var items = $('.work_item');
+		$('.work_tag').remove();
 		var arr_items_tags = [];
-		var tags_name = {'urbanism':'Урбанизм', 'architecture':'Архитектура', 'urban_projects':'Городские проекты', 'exhibitions':'Выставки', 'industrial_design':'Промышленный дизайн', 'navigation':'Навигация', 'graphic_design':'Графический дизайн'}
+		// var arr_items_years = [];
+
 		items.each(function(index, el) {
-			arr_items_tags.push(el.className.slice(10));
+			arr_items_tags.push(el.className.split(' ')[1]);
+			// arr_items_years.push(el.className.split(' ')[2]);
 		});
 
 		var tags = getUnique(arr_items_tags);
@@ -47,8 +51,36 @@ $(document).ready(function() {
 		$.each(tags, function(index, tag) {
 			var tag_items = $(items).filter('.' + tag);
 			var work_tag = $('<div />', {'class':'work_tag ' + tag});
-			$('.works_block').append(work_tag.append(tag_items));
+			var work_tag_title = $('<div />', {'class':'work_tag_title', 'text':tag});
+			$('.works_block').append(work_tag.append(work_tag_title).append(tag_items));
 		});
 
 	});
+
+
+	$('.sort_item.year').click(function() {
+		var items = $('.work_item');
+		$('.work_tag').remove();
+		// var arr_items_tags = [];
+		var arr_items_years = [];
+
+		items.each(function(index, el) {
+			// arr_items_tags.push(el.className.split(' ')[1]);
+			arr_items_years.push(el.className.split(' ')[2]);
+		});
+
+		var years = getUnique(arr_items_years);
+
+		$.each(years, function(index, year) {
+			var year_items = $(items).filter('.' + year);
+			var work_tag = $('<div />', {'class':'work_tag ' + year});
+			var work_tag_title = $('<div />', {'class':'work_tag_title', 'text':year});
+			$('.works_block').append(work_tag.append(work_tag_title).append(year_items));
+		});
+
+	});
+
+
+
+
 });
