@@ -53,6 +53,42 @@
 	color: #6600ff;
 }
 
+.work_tag:before {
+	display: block;
+	clear: both;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	font: 14pt/16pt 'RobotoT';
+}
+
+.work_tag.urbanism:before {
+	content: 'Урбанизм';
+}
+
+.work_tag.architecture:before {
+	content: 'Архитектура';
+}
+
+.work_tag.urban_projects:before {
+	content: 'Городские проекты';
+}
+
+.work_tag.exhibitions:before {
+	content: 'Выставки';
+}
+
+.work_tag.industrial_design:before {
+	content: 'Промышленный дизайн';
+}
+
+.work_tag.navigation:before {
+	content: 'Навигация';
+}
+
+.work_tag.graphic_design:before {
+	content: 'Графический дизайн';
+}
+
 .work_logo {
 	width: 75px;
 	height: 75px;
@@ -83,4 +119,31 @@
 	position: absolute;
 	background-size: cover;
 	background-position: center;
+}
+
+.sort_item {
+	display: inline;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.sort_item:hover {
+	text-decoration: underline;
+}
+
+.works_tags_sort_block {
+	text-align: center;
+	width: 350px;
+	/*outline: 1px solid black;*/
+	font: 10pt/12pt 'RobotoL';
+	position: fixed;
+	top: 95%;
+	left: 50%;
+	margin-left: 175px;
+	left: 20%;
+}
+
+.work_tag {
+	/*outline: 1px solid black;*/
+	overflow: auto;
 }

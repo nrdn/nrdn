@@ -3,6 +3,15 @@ function getRandom (min, max) {
 	return Math.round(rand);
 }
 
+function getUnique(arr) {
+	var obj = {};
+
+	for (var key in arr)
+		obj[ arr[key] ] = true;
+
+	return Object.keys(obj);
+}
+
 $(document).ready(function() {
 	$('.work_item').on({
 		mouseover: function() {
@@ -24,5 +33,22 @@ $(document).ready(function() {
 				$(this).find('.work_image').eq(rand).show();
 			}
 		}
+	});
+	$('.sort_item.tags').click(function(event) {
+		var items = $('.work_item');
+		var arr_items_tags = [];
+		var tags_name = {'urbanism':'Урбанизм', 'architecture':'Архитектура', 'urban_projects':'Городские проекты', 'exhibitions':'Выставки', 'industrial_design':'Промышленный дизайн', 'navigation':'Навигация', 'graphic_design':'Графический дизайн'}
+		items.each(function(index, el) {
+			arr_items_tags.push(el.className.slice(10));
+		});
+
+		var tags = getUnique(arr_items_tags);
+
+		$.each(tags, function(index, tag) {
+			var tag_items = $(items).filter('.' + tag);
+			var work_tag = $('<div />', {'class':'work_tag ' + tag});
+			$('.works_block').append(work_tag.append(tag_items));
+		});
+
 	});
 });

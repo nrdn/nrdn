@@ -14,6 +14,16 @@
 }
 
 @font-face {
+	font-family: RobotoL;
+	src: url('/fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+	font-family: RobotoT;
+	src: url('/fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
 	font-family: Fontello;
 	src: url('/fonts/fontello.ttf');
 }
