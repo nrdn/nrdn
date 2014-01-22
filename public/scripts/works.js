@@ -23,9 +23,6 @@ $(document).ready(function() {
 			$(this).children('.work_images').hide();
 		},
 		mousemove: function(event) {
-			var msg = 0;
-			var msg = event.pageX + event.pageY;
-
 			var max = $(this).find('.work_image').length;
 			if (max > 1) {
 				var rand = getRandom(0, max);
@@ -49,9 +46,10 @@ $(document).ready(function() {
 		var tags = getUnique(arr_items_tags);
 
 		$.each(tags, function(index, tag) {
+			var tags = {'urbanism':'Урбанизм', 'architecture':'Архитектура', 'urban_projects':'Городские проекты', 'exhibitions':'Выставки', 'industrial_design':'Промышленный дизайн', 'navigation':'Навигация', 'graphic_design':'Графический дизайн'}
 			var tag_items = $(items).filter('.' + tag);
 			var work_tag = $('<div />', {'class':'work_tag ' + tag});
-			var work_tag_title = $('<div />', {'class':'work_tag_title', 'text':tag});
+			var work_tag_title = $('<div />', {'class':'work_tag_title', 'text':tags[tag]});
 			$('.works_block').append(work_tag.append(work_tag_title).append(tag_items));
 		});
 
