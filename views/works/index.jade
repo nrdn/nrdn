@@ -16,7 +16,7 @@ block content
 				.work_images
 					each image in work.images
 						.work_image(style='background-image: url(' + image.path + ')')
-				.work_logo 
+				.work_logo= work.logo
 				.work_title= work.ru.title
 	.works_tags_sort_block
 		.sort_item.clear Все

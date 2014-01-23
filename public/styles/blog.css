@@ -1,13 +1,16 @@
 .content_block {
-	width: 1240px;
+	/*width: 1240px;*/
+	width: 100%;
 	position: absolute;
-	margin-left: -620px;
+	/*margin-left: -620px;*/
+	margin-left: -50%;
 	left: 50%;
+	outline: none;
 }
 
 .post_item_block {
 	margin-bottom: 100px;
-	outline: 1px solid black;
+	/*outline: 1px solid black;*/
 }
 
 .post_img {
@@ -16,32 +19,24 @@
 }
 
 .post_title {
-	margin-top: 5px;
-	margin-left: 5%;
+	width: 280px;
 	float: left;
-	font: 16pt/18pt 'RobotoB';
+	font: 16pt/18pt 'RobotoL';
 	text-transform: uppercase;
-	outline: 1px solid black;
+	margin-left: 7%;
+	/*outline: 1px solid black;*/
 }
 
 .post_body {
-	width: 63%;
-	margin-top: 9px;
-	margin-left: 32%;
-	font: 12pt/14pt 'Roboto';
-	outline: 1px solid black;
+	width: 850px;
+	/*margin-top: 9px;*/
+	margin-left: 375px;
+	font: 11pt/14pt 'RobotoL';
+	/*outline: 1px solid black;*/
 }
 
 .post_social {
 	margin-left: 4.9%;
 	width: 100px;
 	outline: 1px solid black;
-}
-
-@media screen and (max-width: 419px) {
-
-	.post_body {
-		clear: both;
-		margin-left: 5%;
-	}
 }

@@ -41,6 +41,7 @@ $(document).ready(function() {
 	$('.sub').click(function() {
 		var title = $('.title').html();
 		var description = $('.description').html();
+		var logo = $('.w_logo').html();
 		var tag = $("select option:selected").val();
 		var images = [];
 
@@ -58,7 +59,8 @@ $(document).ready(function() {
 				description: description
 			},
 			images: images,
-			tag: tag
+			tag: tag,
+			logo: logo
 		};
 
 		$.post('/auth/add/work', data).done(function(data) {

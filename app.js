@@ -6,6 +6,8 @@ var gm = require('gm').subClass({ imageMagick: true });
 
 var mongoose = require('mongoose');
   var Schema = mongoose.Schema;
+  var ObjectId = mongoose.Types.ObjectId()
+
 mongoose.connect('localhost', 'main');
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
@@ -39,6 +41,8 @@ var userSchema = new Schema({
 
 var workSchema = new Schema({
   tag: String,
+  logo: String,
+  w_id: String,
   ru: {
     title: String,
     description: String
@@ -162,7 +166,7 @@ app.get('/works/:id', function(req, res) {
 
 app.get('/blog', function(req, res) {
 
-  Post.find().exec(function(err, posts) {
+  Post.find().sort('-date').exec(function(err, posts) {
     res.render('blog', {posts: posts});
   });
 });
@@ -250,10 +254,13 @@ app.get('/auth/edit/posts/:id', checkAuth, function (req, res) {
 app.post('/auth/add/work', function (req, res) {
   var post = req.body;
   var files = req.files;
+  var short_id = mongoose.Types.ObjectId().toString().substr(-4);
   var work = new Work();
   var dir = __dirname + '/public/images/works/' + work._id;
 
+  work.w_id = short_id;
   work.tag = post.tag;
+  work.logo = post.logo;
   work.ru.title = post.ru.title;
   work.ru.description = post.ru.description;
   if (post.en) {
