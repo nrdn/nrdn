@@ -3,11 +3,6 @@
 	text-align: center;
 }
 
-.logo_block {
-	width: 80px;
-	height: 80px;
-}
-
 .works_block {
 	width: 420px;
 	/*min-height: 150px;*/
@@ -29,6 +24,14 @@
 	border-top: 1px solid white;
 	padding-top: 5px;
 	/*border-bottom: 1px solid white;*/
+}
+
+.work_logo {
+	width: 80px;
+	height: 80px;
+	font: 75px/75px 'Fontello';
+	display: inline-block;
+	margin-bottom: 5px;
 }
 
 .work_title a {

@@ -151,9 +151,9 @@ app.get('/works', function(req, res) {
 app.get('/works/:id', function(req, res) {
   var id = req.params.id;
 
-  Work.findById(id, function(err, work) {
+  Work.find({'w_id':id}).exec(function(err, work) {
     Work.find({'tag':work.tag}).sort('-date').limit(6).exec(function(err, r_works) {
-      res.render('works/work.jade', {work: work, r_works: r_works});
+      res.render('works/work.jade', {work: work[0], r_works: r_works});
     });
   });
 });

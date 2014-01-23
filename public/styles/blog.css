@@ -1,15 +1,14 @@
 .content_block {
-	/*width: 1240px;*/
-	width: 100%;
+	width: 1240px;
 	position: absolute;
 	/*margin-left: -620px;*/
-	margin-left: -50%;
+	margin-left: -620px;
 	left: 50%;
 	outline: none;
 }
 
 .post_item_block {
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 	/*outline: 1px solid black;*/
 }
 
@@ -21,17 +20,17 @@
 .post_title {
 	width: 280px;
 	float: left;
-	font: 16pt/18pt 'RobotoL';
+	font: 16pt/18pt 'Roboto';
 	text-transform: uppercase;
-	margin-left: 7%;
+	margin-top: 25px;
 	/*outline: 1px solid black;*/
 }
 
 .post_body {
 	width: 850px;
-	/*margin-top: 9px;*/
+	margin-top: 25px;
 	margin-left: 375px;
-	font: 11pt/14pt 'RobotoL';
+	font: 12pt/14pt 'RobotoL';
 	/*outline: 1px solid black;*/
 }
 
