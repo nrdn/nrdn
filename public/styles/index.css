@@ -13,7 +13,7 @@
 }
 
 .work_item {
-	/*display: none;*/
+	display: none;
 }
 
 .work_item:first-child {

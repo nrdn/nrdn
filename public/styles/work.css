@@ -1,0 +1,36 @@
+.content_block {
+	width: 1240px;
+	left: 50%;
+	margin-left: -620px;
+	outline: none;
+}
+
+.work_description_block {
+	width: 350px;
+	min-height: 50px;
+	float: right;
+	padding: 5px;
+	background-color: white;
+	background-color: rgba(255,255,255,0.7);
+}
+
+.work_description_block:hover {
+	cursor: pointer;
+	background-color: rgba(255,255,255,1);
+}
+
+.work_title {
+	font: 12pt/14pt 'RobotoL';
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+
+.work_description {
+	font: 10pt/12pt 'RobotoL';
+}
+
+* {
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease-in-out;
+}

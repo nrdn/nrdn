@@ -9,6 +9,12 @@ block content_style
 block content_scripts
 	script(type='text/javascript', src='/scripts/work.js' + version)
 
+block append works_bg
+	.background_works
+		each iamge in work.images
+			.background_item(style='background-image: url(' + iamge.path + ')')
+
 block content
-	h2.work_title= work.ru.title
-	h3.work_description= work.ru.description
+	.work_description_block
+		.work_title= work.ru.title
+		.work_description= work.ru.description
