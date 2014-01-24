@@ -1,6 +1,8 @@
 .content_block {
 	margin-top: 150px;
 	text-align: center;
+	min-height: 500px;
+	-webkit-user-select: none;
 }
 
 .works_block {
@@ -32,6 +34,7 @@
 	font: 75px/75px 'Fontello';
 	display: inline-block;
 	margin-bottom: 5px;
+	cursor: default;
 }
 
 .work_title a {
@@ -49,4 +52,5 @@
 	padding-bottom: 8px;
 	font: 18pt/20pt 'RobotoT';
 	text-transform: uppercase;
+	cursor: default;
 }

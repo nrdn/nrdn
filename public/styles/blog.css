@@ -21,9 +21,14 @@
 	width: 280px;
 	float: left;
 	font: 16pt/18pt 'Roboto';
+	color: black;
 	text-transform: uppercase;
 	margin-top: 25px;
-	/*outline: 1px solid black;*/
+	text-decoration: none;
+}
+
+.post_title:hover {
+	text-decoration: underline;
 }
 
 .post_body {

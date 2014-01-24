@@ -8,6 +8,13 @@ block content_style
 
 block content_scripts
 	script(type='text/javascript', src='/scripts/static.js' + version)
+	script(type='text/javascript', src='//e.issuu.com/embed.js', async='true')
 
 block content
-	h1 Публикации!
+	.issuuembed(data-configid='10593470/6462467')
+	.issuuembed(data-configid='10593470/6462501')
+	.issuuembed(data-configid='10593470/6462512')
+	.issuuembed(data-configid='10593470/6462518')
+	.issuuembed(data-configid='10593470/6462524')
+
+

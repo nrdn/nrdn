@@ -171,7 +171,7 @@ app.get('/blog', function(req, res) {
   });
 });
 
-app.get('/blog/:tag', function(req, res) {
+app.get('/blog/tag/:tag', function(req, res) {
   var tag = req.params.tag;
 
   Post.find({'tag': tag}).exec(function(err, posts) {
@@ -179,7 +179,7 @@ app.get('/blog/:tag', function(req, res) {
   });
 });
 
-app.get('/blog/post/:id', function(req, res) {
+app.get('/blog/:id', function(req, res) {
   var id = req.params.id;
 
   Post.findById(id, function(err, post) {
@@ -323,8 +323,10 @@ app.post('/auth/edit/work/:id', function (req, res) {
 app.post('/auth/add/post', function (req, res) {
   var post = req.body;
   var files = req.files;
+  var short_id = mongoose.Types.ObjectId().toString().substr(-4);
   var b_post = new Post();
 
+  b_post.b_id = short_id;
   b_post.tag = post.tag;
   b_post.ru.title = post.ru.title;
   b_post.ru.body = post.ru.body;
