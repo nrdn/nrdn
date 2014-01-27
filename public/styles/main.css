@@ -41,7 +41,6 @@ body {
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
-	/*border: 1px solid black;*/
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 }
@@ -54,7 +53,6 @@ body {
 	left: 50%;
 	margin-left: -620px;
 	background-color: rgba(255,255,255,0.7);
-	/*border: 1px solid black;*/
 	text-align: center;
 	z-index: 100;
 
@@ -88,7 +86,7 @@ a.logo:hover {
 	min-height: 200px;
 	margin-top: 70px;
 	position: absolute;
-	outline: 1px solid black;
+	/*outline: 1px solid black;*/
 }
 
 .background_works {

@@ -1,7 +1,7 @@
 .content_block {
 	margin-top: 200px;
 	text-align: center;
-	min-height: 300px;
+	/*min-height: 300px;*/
 	-webkit-user-select: none;
 }
 
