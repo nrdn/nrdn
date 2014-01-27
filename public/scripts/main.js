@@ -2,7 +2,7 @@ $(document).ready(function() {
 	var count = $('.background_item').length - 1;
 	var w_count = 0;
 
-	$('.content_block').click(function(event) {
+	$(document).click(function(event) {
 
 		w_count++;
 		$('.work_item').hide();

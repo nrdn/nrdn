@@ -11,7 +11,7 @@ block content_scripts
 
 block append works_bg
 	.background_works
-		each iamge in work.images
+		each iamge in work.images.reverse()
 			.background_item(style='background-image: url(' + iamge.path + ')')
 
 block content
