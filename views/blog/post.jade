@@ -1,7 +1,8 @@
 extends ../layout
 
 block title
-	title= post.ru.title
+	title= post.meta.title
+	meta(name='description', content=post.meta.description)
 
 block content_style
 	link(rel='stylesheet', type='text/css', href='/styles/blog.css' + version)
@@ -12,5 +13,17 @@ block content_scripts
 block content
 	.post_item_block
 		img.post_img(src=post.image)
-		.post_title= post.ru.title
+		.post_dscription_block
+			.post_title= post.ru.title
+			.post_social
+				|<script type="text/javascript">(function() {
+				|  if (window.pluso)if (typeof window.pluso.start == "function") return;
+				|  if (window.ifpluso==undefined) { window.ifpluso = 1;
+				|    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+				|    s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+				|    s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+				|    var h=d[g]('body')[0];
+				|    h.appendChild(s);
+				|  }})();</script>
+				|<div class="pluso" data-background="transparent" data-options="small,round,line,horizontal,counter,theme=04" data-services="vkontakte,facebook,twitter" data-user="294885166"></div>
 		.post_body= post.ru.body

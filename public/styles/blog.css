@@ -17,28 +17,32 @@
 
 .post_title {
 	width: 280px;
-	float: left;
+	/*float: left;*/
 	font: 16pt/18pt 'Roboto';
 	color: black;
 	text-transform: uppercase;
-	margin-top: 25px;
 	text-decoration: none;
+	outline: 1px solid black;
 }
 
-.post_title:hover {
+a.post_title:hover {
 	text-decoration: underline;
 }
 
 .post_body {
-	width: 850px;
+	width: 865px;
 	margin-top: 25px;
 	margin-left: 375px;
 	font: 12pt/14pt 'RobotoL';
-	/*outline: 1px solid black;*/
+	outline: 1px solid black;
 }
 
 .post_social {
-	margin-left: 4.9%;
-	width: 100px;
-	outline: 1px solid black;
+	margin-top: 15px;
+	width: 150px;
+}
+
+.post_dscription_block {
+	margin-top: 25px;
+	float: left;
 }
