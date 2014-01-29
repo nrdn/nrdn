@@ -11,9 +11,13 @@ block content
 		a.back_link(href='/auth') < Назад
 		.title ДОБАВИТЬ ПОСТ
 		form(action="/auth/add/post", method="post", enctype="multipart/form-data")
+			.form_title Заголовок (мета):
+			input(type="text", name="meta[title]",)
 			.form_title Заголовок:
 			input.ru(type="text", name="ru[title]",)
 			input.en(type="text", name="en[title]", disabled)
+			.form_title Описание (мета):
+			textarea(name="meta[description]", rows="8",)
 			.form_title Описание:
 			textarea.ru(name="ru[body]", rows="8",)
 			textarea.en(name="en[body]", rows="8", disabled)

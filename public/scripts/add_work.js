@@ -43,6 +43,10 @@ $(document).ready(function() {
 		var description = $('.description').html();
 		var logo = $('.w_logo').html();
 		var tag = $("select option:selected").val();
+		var meta = {
+			title: $('.meta_title').html(),
+			description: $('.meta_description').html()
+		}
 		var images = [];
 
 		$('.img_item').each(function(index, el) {
@@ -60,7 +64,8 @@ $(document).ready(function() {
 			},
 			images: images,
 			tag: tag,
-			logo: logo
+			logo: logo,
+			meta: meta
 		};
 
 		$.post('/auth/add/work', data).done(function(data) {

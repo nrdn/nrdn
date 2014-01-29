@@ -43,6 +43,10 @@ var workSchema = new Schema({
   tag: String,
   logo: String,
   w_id: String,
+  meta: {
+    title: String,
+    description: String
+  },
   ru: {
     title: String,
     description: String
@@ -66,6 +70,10 @@ var postSchema = new Schema({
     en: {
       title: String,
       body: String
+    },
+    meta: {
+      title: String,
+      description: String
     },
     tag: String,
     b_id: String,
@@ -263,6 +271,9 @@ app.post('/auth/add/work', function (req, res) {
   work.logo = post.logo;
   work.ru.title = post.ru.title;
   work.ru.description = post.ru.description;
+  work.meta.title = post.meta.title;
+  work.meta.description = post.meta.description;
+
   if (post.en) {
     work.en.title = post.en.title;
     work.en.description = post.en.description;
@@ -294,8 +305,12 @@ app.post('/auth/edit/work/:id', function (req, res) {
 
   Work.findById(id, function(err, work) {
     work.tag = post.tag;
+    work.logo = post.logo;
     work.ru.title = post.ru.title;
     work.ru.description = post.ru.description;
+    work.meta.title = post.meta.title;
+    work.meta.description = post.meta.description;
+
     if (post.en) {
       work.en.title = post.en.title;
       work.en.description = post.en.description;
@@ -329,6 +344,8 @@ app.post('/auth/add/post', function (req, res) {
   b_post.tag = post.tag;
   b_post.ru.title = post.ru.title;
   b_post.ru.body = post.ru.body;
+  b_post.meta.title = post.meta.title;
+  b_post.meta.description = post.meta.description;
 
   if (post.en) {
     b_post.en.title = post.en.title;
@@ -360,9 +377,15 @@ app.post('/auth/edit/post/:id', function (req, res) {
 
   Post.findById(id, function(err, b_post) {
     b_post.tag = post.tag;
-    b_post.ru.description = post.ru.description;
-    if (post.en)
-      b_post.en.description = post.en.description;
+    b_post.ru.title = post.ru.title;
+    b_post.ru.body = post.ru.body;
+    b_post.meta.title = post.meta.title;
+    b_post.meta.description = post.meta.description;
+
+    if (post.en) {
+      b_post.en.title = post.en.title;
+      b_post.en.body = post.en.body;
+    }
 
     if (files.image.size != 0) {
       var newPath = __dirname + '/public/images/posts/' + b_post._id + '.jpg';
