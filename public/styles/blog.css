@@ -22,7 +22,7 @@
 	color: black;
 	text-transform: uppercase;
 	text-decoration: none;
-	outline: 1px solid black;
+	/*outline: 1px solid black;*/
 }
 
 a.post_title:hover {
@@ -34,7 +34,7 @@ a.post_title:hover {
 	margin-top: 25px;
 	margin-left: 375px;
 	font: 12pt/14pt 'RobotoL';
-	outline: 1px solid black;
+	/*outline: 1px solid black;*/
 }
 
 .post_social {
