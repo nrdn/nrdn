@@ -255,11 +255,10 @@ app.get('/auth/edit/posts/:id', checkAuth, function (req, res) {
 app.post('/auth/add/work', function (req, res) {
   var post = req.body;
   var files = req.files;
-  var short_id = mongoose.Types.ObjectId().toString().substr(-4);
   var work = new Work();
   var dir = __dirname + '/public/images/works/' + work._id;
 
-  work.w_id = short_id;
+  work.w_id = work._id.toString().substr(-4);
   work.tag = post.tag;
   work.logo = post.logo;
   work.ru.title = post.ru.title;
@@ -324,7 +323,6 @@ app.post('/auth/edit/work/:id', function (req, res) {
 app.post('/auth/add/post', function (req, res) {
   var post = req.body;
   var files = req.files;
-  var short_id = mongoose.Types.ObjectId().toString().substr(-4);
   var b_post = new Post();
 
   b_post.b_id = b_post._id.toString().substr(-4);
