@@ -43,6 +43,7 @@ a.post_title:hover {
 }
 
 .post_dscription_block {
+	width: 280px;
 	margin-top: 25px;
 	float: left;
 }
