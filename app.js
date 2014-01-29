@@ -68,6 +68,7 @@ var postSchema = new Schema({
       body: String
     },
     tag: String,
+    b_id: String,
     date: {type: Date, default: Date.now},
     image: String
 });
