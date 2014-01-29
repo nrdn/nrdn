@@ -1,13 +1,16 @@
 extends ../layout
 
 block title
-	title Пост
+	title= post.ru.title
 
 block content_style
-	link(rel='stylesheet', type='text/css', href='/styles/post.css' + version)
+	link(rel='stylesheet', type='text/css', href='/styles/blog.css' + version)
 
 block content_scripts
-	script(type='text/javascript', src='/scripts/post.js' + version)
+	script(type='text/javascript', src='/scripts/blog.js' + version)
 
 block content
-	h1 Пост!
+	.post_item_block
+		img.post_img(src=post.image)
+		.post_title= post.ru.title
+		.post_body= post.ru.body

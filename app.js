@@ -182,9 +182,9 @@ app.get('/blog/tag/:tag', function(req, res) {
 app.get('/blog/:id', function(req, res) {
   var id = req.params.id;
 
-  Post.findById(id, function(err, post) {
+  Post.find({'b_id':id}).exec(function(err, post) {
     Post.find({'tag':post.tag}).sort('-date').limit(6).exec(function(err, r_posts) {
-      res.render('blog/post.jade', {post: post, r_posts: r_posts});
+      res.render('blog/post.jade', {post: post[0], r_posts: r_posts});
     });
   });
 });
@@ -326,7 +326,7 @@ app.post('/auth/add/post', function (req, res) {
   var short_id = mongoose.Types.ObjectId().toString().substr(-4);
   var b_post = new Post();
 
-  b_post.b_id = short_id;
+  b_post.b_id = b_post._id.toString().substr(-4);
   b_post.tag = post.tag;
   b_post.ru.title = post.ru.title;
   b_post.ru.body = post.ru.body;
