@@ -124,6 +124,18 @@ app.post('/rm_prev', function (req, res) {
   });
 });
 
+app.post('/blog_load', function (req, res) {
+  var offset = req.body.offset;
+
+  Post.find().sort('-date').skip(offset).limit(4).exec(function(err, posts) {
+    if (posts.length == 0)
+      res.send('end')
+    else
+      res.send(posts);
+  });
+});
+
+
 // ------------------------
 // *** Main Block ***
 // ------------------------
@@ -175,7 +187,7 @@ app.get('/works/:id', function(req, res) {
 
 app.get('/blog', function(req, res) {
 
-  Post.find().sort('-date').exec(function(err, posts) {
+  Post.find().sort('-date').limit(4).exec(function(err, posts) {
     res.render('blog', {posts: posts});
   });
 });
