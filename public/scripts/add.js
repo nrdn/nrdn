@@ -38,4 +38,13 @@ $(document).ready(function() {
 	$('.plus').on('click', snakeBack);
 	$('.minus').on('click', snakeForward);
 	$('.toggle_eng').on('click', toggleEnglish);
+
+	$('.form_submit').click(function() {
+		var areas = $('textarea');
+		areas.each(function() {
+			var newValue = $(this).val().replace(/\n/g, "<br />");
+			$(this).val(newValue);
+		});
+		$('form').submit();
+	});
 });
