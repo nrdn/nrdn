@@ -24,32 +24,36 @@
 	margin-right: 0px;
 }
 
-.urbanism .work_logo {
-	color: #0bd7d8;
+svg {
+	/*outline: 1px solid black;*/
 }
 
-.architecture .work_logo {
-	color: #ccff00;
+.urbanism svg {
+	fill: #0bd7d8;
 }
 
-.urban_projects .work_logo {
-	color: #fde910;
+.architecture svg {
+	fill: #ccff00;
 }
 
-.exhibitions .work_logo {
-	color: #ff47ca;
+.urban_projects svg {
+	fill: #fde910;
 }
 
-.industrial_design .work_logo {
-	color: #ed008c;
+.exhibitions svg {
+	fill: #ff47ca;
 }
 
-.navigation .work_logo {
-	color: #ae00ff;
+.industrial_design svg {
+	fill: #ed008c;
 }
 
-.graphic_design .work_logo {
-	color: #6600ff;
+.navigation svg {
+	fill: #ae00ff;
+}
+
+.graphic_design svg {
+	fill: #6600ff;
 }
 
 .work_tag_title {
@@ -64,9 +68,6 @@
 	display: block;
 	position: relative;
 	margin:0 auto;
-	/*background-color: green;*/
-	text-align: center;
-	font: 75px/75px 'Fontello';
 }
 
 .work_title {

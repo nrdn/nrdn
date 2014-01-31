@@ -31,10 +31,13 @@
 .work_logo {
 	width: 80px;
 	height: 80px;
-	font: 75px/75px 'Fontello';
 	display: inline-block;
 	margin-bottom: 5px;
 	cursor: default;
+}
+
+.work_logo svg {
+	fill: white;
 }
 
 .work_title a {

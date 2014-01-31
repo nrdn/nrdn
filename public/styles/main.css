@@ -23,11 +23,6 @@
 	src: url('/fonts/Roboto-Thin.ttf');
 }
 
-@font-face {
-	font-family: Fontello;
-	src: url('/fonts/nrdn_ru.ttf');
-}
-
 html, body, .maket {
 	height: 100%;
 }

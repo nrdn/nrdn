@@ -39,13 +39,13 @@ $(document).ready(function() {
 
 
 	$('.sub').click(function() {
-		var title = $('.title').html();
+		var title = $('.title').text();
 		var description = $('.description').html();
-		var logo = $('.w_logo').html();
+		var logo = $('.w_logo').text();
 		var tag = $("select option:selected").val();
 		var meta = {
-			title: $('.meta_title').html(),
-			description: $('.meta_description').html()
+			title: $('.meta_title').text(),
+			description: $('.meta_description').text()
 		}
 		var images = [];
 

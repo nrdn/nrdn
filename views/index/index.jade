@@ -19,7 +19,8 @@ block content
 		- tags = {'urbanism':'Урбанизм', 'architecture':'Архитектура', 'urban_projects':'Городские проекты', 'exhibitions':'Выставки', 'industrial_design':'Промышленный дизайн', 'navigation':'Навигация', 'graphic_design':'Графический дизайн'}
 		each work in works.reverse()
 			.work_item
-				.work_logo= work.logo
+				.work_logo
+					!= work.logo
 				.work_tag= tags[work.tag]
 				.work_title
 					a(href='/works/' + work.w_id)= work.ru.title
