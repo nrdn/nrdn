@@ -18,4 +18,5 @@ block append works_bg
 block content
 	.work_description_block
 		.work_title= work.ru.title
-		.work_description= work.ru.description
+		.work_description
+			!= work.ru.description
