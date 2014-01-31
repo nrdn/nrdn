@@ -23,7 +23,10 @@
 }
 
 .about_logo {
-	font: 14pt/14pt 'Fontello';
+	width: 18px;
+	height: 18px;
+	background: url('../images/design/logo.png') 50%;
+	background-size: cover;
 	float: left;
 	margin-right: 10px;
 }

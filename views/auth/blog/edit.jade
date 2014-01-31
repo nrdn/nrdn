@@ -12,14 +12,14 @@ block content
 		.title РЕАДАКТИРОВАТЬ ПОСТ
 		form(action="/auth/add/post", method="post", enctype="multipart/form-data")
 			.form_title Заголовок (мета):
-			input(type="text", name="meta[title]",)
+			input(type="text", name="meta[title]", value=post.meta.title)
 			.form_title Заголовок:
-			input.ru(type="text", name="ru[title]",)
+			input.ru(type="text", name="ru[title]", value=post.ru.title)
 			input.en(type="text", name="en[title]", disabled)
 			.form_title Описание (мета):
-			textarea(name="meta[description]", rows="8",)
+			textarea(name="meta[description]", rows="8",)= post.meta.description
 			.form_title Описание:
-			textarea.ru(name="ru[body]", rows="8",)
+			textarea.ru(name="ru[body]", rows="8",)= post.ru.body
 			textarea.en(name="en[body]", rows="8", disabled)
 			.form_title Картинка:
 			input(type="file", name="image")

@@ -3,6 +3,5 @@ extends ../../layout
 block content
 	h1 Список постов
 	each post in posts
-		b= post.ru.title
+		a(href='/auth/edit/posts/' + post._id)= post.ru.title
 		br
-		img(src=post.image)

@@ -58,15 +58,20 @@ body {
 	font: 11pt/22pt 'Roboto';
 	text-decoration: none;
 	color: black;
+	clear: both;
 }
 
 .menu_block a:hover {
 	text-decoration: underline;
 }
 
-.menu_block .logo {
-	font: 22px/22px 'Fontello';
-	color: black;
+.logo {
+	width: 22px;
+	height: 22px;
+	background: url('../images/design/logo.png') 50%;
+	background-size: cover;
+	display: inline-block;
+	/*outline: 1px solid black;*/
 }
 
 a.logo:hover {
