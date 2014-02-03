@@ -29,11 +29,11 @@ svg {
 }
 
 .urbanism svg {
-	fill: #0bd7d8;
+	fill: #003ca5;
 }
 
 .architecture svg {
-	fill: #ccff00;
+	fill: #00806e;
 }
 
 .urban_projects svg {
@@ -41,19 +41,19 @@ svg {
 }
 
 .exhibitions svg {
-	fill: #ff47ca;
+	fill: #8f1537;
 }
 
 .industrial_design svg {
-	fill: #ed008c;
+	fill: #934bff;
 }
 
 .navigation svg {
-	fill: #ae00ff;
+	fill: #06262d;
 }
 
 .graphic_design svg {
-	fill: #6600ff;
+	fill: #ea0029;
 }
 
 .work_tag_title {
