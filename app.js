@@ -110,7 +110,7 @@ app.post('/edit', function (req, res) {
   var ext = files.mf_file_undefined.type.slice(6);
   var newPath = __dirname + '/public/preview/' + name;
 
-  gm(files.mf_file_undefined.path).resize(1120, false).quality(60).noProfile().write(newPath, function() {
+  gm(files.mf_file_undefined.path).resize(1600, false).quality(80).noProfile().write(newPath, function() {
     var path = {'path':'/preview/' + name}
     res.send(path);
   });
