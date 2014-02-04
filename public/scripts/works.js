@@ -27,7 +27,9 @@ $(document).ready(function() {
 		mousemove: function(event) {
 			var max = $(this).find('.work_image').length;
 			if (max > 1) {
-				var position = +event.pageX.toString().slice(1,-1)
+				var x_track = +event.pageX.toString().slice(1,-1)
+				var y_track = +event.pageY.toString().slice(1,-1)
+				var position = x_track + y_track;
 				if (position != old_position) {
 					var rand = getRandom(0, max);
 					$(this).find('.work_image').hide();
