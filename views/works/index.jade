@@ -15,7 +15,7 @@ block content
 			a.work_item(href='/works/' + work.w_id, class=work.tag + ' ' + work.date.getFullYear())
 				.work_images
 					each image in work.images
-						- var dir_path = image.path.slice(0,27)
+						- var dir_path = image.path.slice(0,38)
 						- var img_name = image.path.slice(-13)
 						//- .work_image(style='background-image: url(' + image.path + ')')
 						.work_image(style='background-image: url(' + dir_path + '/small/' + img_name + ')')
