@@ -15,31 +15,36 @@ function getUnique(arr) {
 }
 
 $(document).ready(function() {
-	$('.work_item').on({
-		mouseover: function() {
-			$(this).children('.work_logo, .work_title').hide();
-			$(this).children('.work_images').show();
-		},
-		mouseout: function() {
-			$(this).children('.work_logo, .work_title').show();
-			$(this).children('.work_images').hide();
-		},
-		mousemove: function(event) {
-			var max = $(this).find('.work_image').length;
-			if (max > 1) {
-				var x_track = +event.pageX.toString().slice(1,-1)
-				var y_track = +event.pageY.toString().slice(1,-1)
-				var position = x_track + y_track;
-				if (position != old_position) {
-					var rand = getRandom(0, max);
-					$(this).find('.work_image').hide();
-					$(this).find('.work_image').eq(rand).show();
-					old_position = position;
-				}
+
+	function bg_move() {
+		var max = $(this).find('.work_image').length;
+		if (max > 1) {
+			var x_track = +event.pageX.toString().slice(1,-1)
+			var y_track = +event.pageY.toString().slice(1,-1)
+			var position = x_track + y_track;
+			if (position != old_position) {
+				var rand = getRandom(0, max);
+				$(this).find('.work_image').hide();
+				$(this).find('.work_image').eq(rand).show();
+				old_position = position;
 			}
 		}
-	});
+	}
 
+	function bg_over() {
+		$(this).children('.work_logo, .work_title').hide();
+		$(this).children('.work_images').show();
+	}
+
+	function bg_out() {
+		$(this).children('.work_logo, .work_title').show();
+		$(this).children('.work_images').hide();
+	}
+
+
+	$(document).on('mouseover', '.work_item', bg_over);
+	$(document).on('mouseout', '.work_item', bg_out);
+	$(document).on('mousemove', '.work_item', bg_move);
 
 
 
@@ -48,11 +53,9 @@ $(document).ready(function() {
 		var items = $('.work_item');
 		$('.work_tag').remove();
 		var arr_items_tags = [];
-		// var arr_items_years = [];
 
 		items.each(function(index, el) {
 			arr_items_tags.push(el.className.split(' ')[1]);
-			// arr_items_years.push(el.className.split(' ')[2]);
 		});
 
 		var tags = getUnique(arr_items_tags);
@@ -71,11 +74,9 @@ $(document).ready(function() {
 	$('.sort_item.year').click(function() {
 		var items = $('.work_item');
 		$('.work_tag').remove();
-		// var arr_items_tags = [];
 		var arr_items_years = [];
 
 		items.each(function(index, el) {
-			// arr_items_tags.push(el.className.split(' ')[1]);
 			arr_items_years.push(el.className.split(' ')[2]);
 		});
 
