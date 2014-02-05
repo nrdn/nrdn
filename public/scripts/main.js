@@ -8,6 +8,7 @@ $(document).ready(function() {
 		$('.work_item').hide();
 		$('.work_item').eq(w_count).show();
 		$('.background_item').eq(count).css('opacity', '0');
+		$('.background_item').eq(count-1).css('opacity', '1');
 		count--;
 
 		if (count < 0) {
