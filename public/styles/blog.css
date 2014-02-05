@@ -6,7 +6,7 @@
 }
 
 .post_item_block {
-	margin-bottom: 100px;
+	padding-bottom: 100px;
 	overflow: hidden;
 }
 
@@ -46,4 +46,8 @@ a.post_title:hover {
 	width: 280px;
 	margin-top: 25px;
 	float: left;
+}
+
+.post_item_block:hover {
+	background-color: #edf1f3;
 }
