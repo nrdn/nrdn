@@ -6,7 +6,8 @@
 }
 
 .menu_block a:nth-child(3) {
-	text-decoration: underline;
+	/*text-decoration: underline;*/
+	border-bottom: black 1px dotted;
 }
 
 .issuuembed {

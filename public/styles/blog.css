@@ -6,8 +6,8 @@
 }
 
 .menu_block a:nth-child(4) {
-	/*font: 11pt/22pt 'RobotoB';*/
-	text-decoration: underline;
+	/*text-decoration: underline;*/
+	border-bottom: black 1px dotted;
 }
 
 .post_item_block {
