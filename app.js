@@ -310,40 +310,46 @@ app.post('/auth/add/work', function (req, res) {
   });
 });
 
-app.post('/auth/edit/work/:id', function (req, res) {
+app.post('/auth/edit/works/:id', function (req, res) {
   var post = req.body;
   var files = req.files;
   var id = req.params.id;
+  var y_date = new Date();
+  y_date.setFullYear(post.year);
 
   Work.findById(id, function(err, work) {
-    work.tag = post.tag;
-    work.logo = post.logo;
-    work.ru.title = post.ru.title;
-    work.ru.description = post.ru.description;
-    work.meta.title = post.meta.title;
-    work.meta.description = post.meta.description;
+    work.date = y_date;
+    work.save(function() {
+      res.redirect('back');
+    });
+    // work.tag = post.tag;
+    // work.logo = post.logo;
+    // work.ru.title = post.ru.title;
+    // work.ru.description = post.ru.description;
+    // work.meta.title = post.meta.title;
+    // work.meta.description = post.meta.description;
 
-    if (post.en) {
-      work.en.title = post.en.title;
-      work.en.description = post.en.description;
-    }
+    // if (post.en) {
+    //   work.en.title = post.en.title;
+    //   work.en.description = post.en.description;
+    // }
 
-    if (files.image.size != 0) {
-      var newPath = __dirname + '/public/images/works/' + work._id + '.jpg';
-      gm(files.image.path).resize(1600, false).quality(80).noProfile().write(newPath, function() {
-        work.image = '/images/works/' + work._id + '.jpg';
-        work.save(function() {
-          fs.unlink(files.image.path);
-          res.redirect('back');
-        });
-      });
-    }
-    else {
-      work.save(function() {
-        fs.unlink(files.image.path);
-        res.redirect('back');
-      });
-    }
+    // if (files.image.size != 0) {
+    //   var newPath = __dirname + '/public/images/works/' + work._id + '.jpg';
+    //   gm(files.image.path).resize(1600, false).quality(80).noProfile().write(newPath, function() {
+    //     work.image = '/images/works/' + work._id + '.jpg';
+    //     work.save(function() {
+    //       fs.unlink(files.image.path);
+    //       res.redirect('back');
+    //     });
+    //   });
+    // }
+    // else {
+    //   work.save(function() {
+    //     fs.unlink(files.image.path);
+    //     res.redirect('back');
+    //   });
+    // }
   });
 });
 
