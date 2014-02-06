@@ -5,6 +5,6 @@ extends ../../layout
 block content
 	h1 Список работ
 	each work in works
-		b= work.ru.title
+		a(href='/auth/edit/work/' + work._id)= work.ru.title
 		br
-		img(src=work.image)
+		br
