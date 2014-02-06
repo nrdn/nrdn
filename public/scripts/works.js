@@ -15,6 +15,7 @@ function getUnique(arr) {
 }
 
 $(document).ready(function() {
+	var old_items = $('.work_item');
 
 	function bg_move() {
 		var max = $(this).find('.work_image').length;
@@ -89,6 +90,15 @@ $(document).ready(function() {
 			$('.works_block').append(work_tag.append(work_tag_title).append(year_items));
 		});
 
+	});
+
+
+	$('.sort_item.clear').click(function() {
+		$('.work_tag').remove();
+
+		old_items.each(function(index, el) {
+			$('.works_block').append(el);
+		});
 	});
 
 

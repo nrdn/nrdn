@@ -7,7 +7,6 @@ $(document).ready(function() {
 	});
 
 	$(document).click(function(event) {
-
 		w_count++;
 		$('.work_item').hide();
 		$('.work_item').eq(w_count).show();
