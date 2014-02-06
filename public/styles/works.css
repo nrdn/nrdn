@@ -1,6 +1,7 @@
 .content_block {
 	width: 1240px;
 	margin-left: -620px;
+	margin-bottom: 100px;
 	left: 50%;
 	position: absolute;
 }
@@ -118,5 +119,5 @@
 
 .work_tag {
 	/*outline: 1px solid black;*/
-	overflow: auto;
+	overflow: hidden;
 }
