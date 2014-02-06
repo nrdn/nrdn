@@ -5,6 +5,10 @@
 	outline: none;
 }
 
+.menu_block a:nth-child(2) {
+	text-decoration: underline;
+}
+
 .work_description_block {
 	width: 350px;
 	min-height: 50px;
