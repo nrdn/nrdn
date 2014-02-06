@@ -22,15 +22,6 @@
 	float: left;
 }
 
-.about_logo {
-	width: 18px;
-	height: 18px;
-	background: url('../images/design/logo.png') 50%;
-	background-size: cover;
-	float: left;
-	margin-right: 10px;
-}
-
 .about_title {
 	font: 14pt/16pt 'Roboto';
 }
