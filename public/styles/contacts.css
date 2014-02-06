@@ -19,10 +19,10 @@
 }
 
 .about_description {
-	width: 420px;
+	width: 450px;
 	margin-top: 5px;
 	/*outline: 1px solid black;*/
-	font: 12pt/14pt 'RobotoL';
+	font: 9pt/13pt 'RobotoL';
 }
 
 .about_description p {
@@ -31,7 +31,7 @@
 
 .partners_block {
 	margin-top: 15px;
-	margin-left: 120px;
+	margin-left: 90px;
 	float: left;
 }
 
