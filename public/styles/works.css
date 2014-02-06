@@ -1,7 +1,6 @@
 .content_block {
 	width: 1240px;
 	margin-left: -620px;
-	margin-bottom: 100px;
 	left: 50%;
 	position: absolute;
 }
@@ -59,7 +58,7 @@
 }
 
 .work_tag_title {
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 	text-transform: uppercase;
 	font: 14pt/16pt 'RobotoT';
 }
@@ -118,6 +117,10 @@
 }
 
 .work_tag {
-	/*outline: 1px solid black;*/
+	margin-top: 10px;
 	overflow: hidden;
+}
+
+.work_tag:first-child {
+	margin-top: 0px;
 }
