@@ -30,7 +30,7 @@
 	/*outline: 1px solid black;*/
 }
 
-a.post_title:hover {
+.post_item_block:hover .post_title {
 	text-decoration: underline;
 }
 
@@ -54,5 +54,5 @@ a.post_title:hover {
 }
 
 .post_item_block:hover {
-	background-color: #edf1f3;
+	background-color: #F8F8F8;
 }

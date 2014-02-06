@@ -5,6 +5,13 @@
 	outline: none;
 }
 
+.content_block, .menu_block {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 .menu_block a:nth-child(2) {
 	text-decoration: underline;
 }
@@ -27,6 +34,13 @@
 	font: 12pt/14pt 'RobotoL';
 	text-transform: uppercase;
 	margin-bottom: 5px;
+}
+
+.work_title:hover {
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
 }
 
 .work_description {
