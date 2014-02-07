@@ -12,7 +12,7 @@
 	user-select: none;
 }
 
-.menu_block a:nth-child(2) {
+.menu_block a:nth-child(1) {
 	/*text-decoration: underline;*/
 	border-bottom: black 1px dotted;
 }

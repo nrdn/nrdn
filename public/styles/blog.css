@@ -5,7 +5,7 @@
 	left: 50%;
 }
 
-.menu_block a:nth-child(4) {
+.menu_block a:nth-child(3) {
 	/*text-decoration: underline;*/
 	border-bottom: black 1px dotted;
 }
