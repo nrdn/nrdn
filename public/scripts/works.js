@@ -36,7 +36,8 @@ $(document).ready(function() {
 		var max = $(this).find('.work_image').length;
 		var rand = getRandom(0, max);
 		$(this).children('.work_logo, .work_title').hide();
-		$(this).children('.work_images').eq(rand).show();
+		$(this).children('.work_images').show();
+		$(this).find('.work_image').eq(rand).show();
 	}
 
 	function bg_out() {
