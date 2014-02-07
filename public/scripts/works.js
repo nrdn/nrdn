@@ -33,8 +33,10 @@ $(document).ready(function() {
 	}
 
 	function bg_over() {
+		var max = $(this).find('.work_image').length;
+		var rand = getRandom(0, max);
 		$(this).children('.work_logo, .work_title').hide();
-		$(this).children('.work_images').show();
+		$(this).children('.work_images').eq(rand).show();
 	}
 
 	function bg_out() {
@@ -45,7 +47,7 @@ $(document).ready(function() {
 
 	$(document).on('mouseover', '.work_item', bg_over);
 	$(document).on('mouseout', '.work_item', bg_out);
-	$(document).on('mousemove', '.work_item', bg_move);
+	// $(document).on('mousemove', '.work_item', bg_move);
 
 
 
