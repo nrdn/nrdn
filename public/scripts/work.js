@@ -9,7 +9,7 @@ $(document).ready(function() {
 	$(document).click(function(event) {
 		var target = $( event.target );
 		console.log(target)
-		if (target.is( ':not(.logo, .menu_items a)' )) {
+		if (target.is( ':not(.logo, .menu_items a, .work_description_block)' )) {
 			w_count++;
 			$('.work_item').hide();
 			$('.work_item').eq(w_count).show();
