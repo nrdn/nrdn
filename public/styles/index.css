@@ -15,9 +15,9 @@
 	display: none;
 }
 
-.work_item:first-child {
+/*.work_item:first-child {
 	display: block;
-}
+}*/
 
 .work_title {
 	font: 28pt/28pt 'Roboto';

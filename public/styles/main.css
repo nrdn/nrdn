@@ -123,9 +123,9 @@ a.logo:hover {
   background-size: cover;
 }
 
-.background_item:last-child {
+/*.background_item:last-child {
 	opacity: 1;
-}
+}*/
 
 * {
 	-webkit-transition-property: opacity;
