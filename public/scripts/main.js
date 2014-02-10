@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 	$(document).click(function(event) {
 		var target = $( event.target );
-		if (target.is( ':not(.logo, .menu_items a)' )) {
+		if (target.is( ':not(.logo, .menu_items a, .work_title a)' )) {
 			w_count = getRandom(0, count);
 
 			if (w_count == old_rand) {
