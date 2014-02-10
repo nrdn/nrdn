@@ -17,7 +17,7 @@ block append works_bg
 block content
 	.works_block
 		- tags = {'urbanism':'Урбанизм', 'architecture':'Архитектура', 'urban_projects':'Городские проекты', 'exhibitions':'Выставки', 'industrial_design':'Промышленный дизайн', 'navigation':'Навигация', 'graphic_design':'Графический дизайн'}
-		each work in works.reverse()
+		each work in works
 			.work_item
 				.work_logo
 					!= work.logo
