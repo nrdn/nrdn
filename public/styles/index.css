@@ -1,7 +1,6 @@
 .content_block {
 	margin-top: 15%;
 	text-align: center;
-	/*min-height: 300px;*/
 	-webkit-user-select: none;
 }
 
@@ -56,4 +55,20 @@
 	font: 18pt/20pt 'RobotoT';
 	text-transform: uppercase;
 	cursor: default;
+}
+
+.social_block {
+	width: 165px;
+	position: absolute;
+	z-index: 999;
+	top: 95%;
+	left: 50%;
+	margin-left: -75px;
+}
+
+.social_block a {
+	margin-right: 35px;
+	color: white;
+	text-decoration: none;
+	font: 11pt/12pt 'Social';
 }
