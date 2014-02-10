@@ -1,5 +1,5 @@
 var old_position = 0;
-var old_rand = 0;
+var step = 10000;
 
 function getRandom (min, max) {
 	var rand = min - 0.5 + Math.random()*(max-min)
@@ -21,8 +21,12 @@ $(document).ready(function() {
 	function bg_move() {
 		var max = $(this).find('.work_image').length;
 		if (max > 1) {
-			var step = event.pageX + event.pageY;
-			var position = +step.toString().charAt(1);
+			if (step > 99999)
+				step = 10000;
+			else
+				step += event.pageX + event.pageY;
+
+			var position = +step.toString().charAt(0);
 			if (position != old_position) {
 				var rand = getRandom(0, max);
 				$(this).find('.work_image').hide();
