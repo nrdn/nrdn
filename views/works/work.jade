@@ -20,3 +20,8 @@ block content
 		.work_title= work.ru.title
 		.work_description
 			!= work.ru.description
+
+block footer
+	.dots_block
+		each dot in work.images
+			.dot ◦

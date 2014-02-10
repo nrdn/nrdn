@@ -6,6 +6,8 @@ $(document).ready(function() {
 		$(this).hide();
 	});
 
+	$('.dot:first').text('●');
+
 	$(document).click(function(event) {
 		var target = $( event.target );
 		console.log(target)
@@ -13,6 +15,8 @@ $(document).ready(function() {
 			w_count++;
 			$('.work_item').hide();
 			$('.work_item').eq(w_count).show();
+			$('.dot').text('◦');
+			$('.dot').eq(w_count).text('●');
 			$('.background_item').eq(count).css('opacity', '0');
 			$('.background_item').eq(count-1).css('opacity', '1');
 			count--;
@@ -22,6 +26,7 @@ $(document).ready(function() {
 				count = $('.background_item').length - 1;
 				w_count = 0;
 				$('.work_item').eq(w_count).show();
+				$('.dot').eq(w_count).text('●');
 			}
 		}
 	});
