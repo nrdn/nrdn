@@ -2,8 +2,18 @@ var offset = 0;
 
 $(document).ready(function() {
 
+	function arrowUp () {
+		var e = $('.scroll_top');
 
-	$('.maket').scroll(function() {
+		e.click(function(){
+			$(".maket:not(:animated)").animate({ scrollTop: 0}, 500 );
+			return false;
+		});
+
+		( $('.maket').scrollTop() > 300 ) ? e.show() : e.hide();
+	}
+
+	function scrollLoader () {
 		var maket = $('.maket').height();
 		var cont = $('.content_block').height();
 
@@ -23,9 +33,13 @@ $(document).ready(function() {
 					});
 				}
 				else {
-					$('.maket').off('scroll');
+					$('.maket').off(scrollLoader);
 				}
 			});
 		}
-	});
+	}
+
+
+	$('.maket').on('scroll', scrollLoader)
+	$('.maket').on('scroll', arrowUp)
 });

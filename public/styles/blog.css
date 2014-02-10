@@ -5,6 +5,10 @@
 	left: 50%;
 }
 
+.menu_block {
+	position: absolute;
+}
+
 .menu_items a:nth-child(3) {
 	/*text-decoration: underline;*/
 	border-bottom: black 1px dotted;
@@ -55,4 +59,32 @@
 
 .post_item_block:hover {
 	background-color: #F8F8F8;
+}
+
+.scroll_top {
+	width: 120px;
+	height: 25px;
+	margin-left: -60px;
+	top: 94%;
+	left: 47%;
+	position: fixed;
+	background-color: rgba(255,255,255,0.7);
+	z-index: 9999;
+	cursor: pointer;
+	display: none;
+	padding-top: 5px;
+	padding-left: 60px;
+}
+
+.top_text {
+	display: inline;
+	font: 10pt/12pt 'Roboto';
+}
+
+.scroll_top:hover {
+	background-color: white;
+}
+
+.scroll_top:hover .top_text {
+	border-bottom: black 1px dotted;
 }
