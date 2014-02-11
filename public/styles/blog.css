@@ -34,9 +34,9 @@
 	/*outline: 1px solid black;*/
 }
 
-.post_item_block:hover .post_title {
+/*.post_item_block:hover .post_title {
 	text-decoration: underline;
-}
+}*/
 
 .post_body {
 	width: 865px;
