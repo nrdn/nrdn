@@ -11,8 +11,12 @@
 }
 
 .about_block {
-	margin-top: 35px;
+	/*margin-top: 17px;*/
 	float: left;
+}
+
+.about_block, .partners_block {
+	margin-top: 35px;
 }
 
 .about_title {
