@@ -9,8 +9,8 @@ $(document).ready(function() {
 	$('.dot:first').text('●');
 
 	$(document).click(function(event) {
-		var target = $( event.target );
-		console.log(target)
+		var target = $(event.target);
+
 		if (target.is( ':not(.logo, .menu_items a, .work_description_block, .work_title, .work_description)' )) {
 			w_count++;
 			$('.work_item').hide();

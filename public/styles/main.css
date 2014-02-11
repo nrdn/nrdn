@@ -132,3 +132,11 @@ a.logo:hover {
 	-webkit-transition-duration: 0.5s;
 	-webkit-transition-timing-function: ease-in-out;
 }
+
+.menu_block:after {
+    content: '+7 (495) 629-03-40';
+    position: absolute;
+    top: 7px;
+    right: 14px;
+    font: 9pt/13pt 'Roboto';
+}
