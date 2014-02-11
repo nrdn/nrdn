@@ -58,12 +58,12 @@
 }
 
 .social_block {
-	width: 165px;
+	width: 220px;
 	position: absolute;
 	z-index: 999;
 	top: 95%;
 	left: 50%;
-	margin-left: -75px;
+	margin-left: -110px;
 }
 
 .social_block a {
