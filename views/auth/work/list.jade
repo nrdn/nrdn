@@ -3,6 +3,7 @@ extends ../../layout
 
 
 block content
+	a.back_link(href='/auth') < Назад
 	h1 Список работ
 	each work in works
 		a(href='/auth/edit/works/' + work._id)= work.ru.title

@@ -11,18 +11,27 @@ block content
 		a.back_link(href='/auth') < Назад
 		.title РЕДАКТИРОВАТЬ РАБОТУ
 		form(action="", method="post", enctype="multipart/form-data")
-			.form_title Год:
-			input(type="text", name="year")
-			//- .form_title Описание:
-			//- textarea.ru(name="ru[description]", rows="8",)
-			//- textarea.en(name="en[description]", rows="8", disabled)
+			.form_title Заголовок:
+			input.ru(type='text' name="ru[title]", value=work.ru.title)
+			input.en(type='text' name="en[title]", disabled)
+			.form_title Заголовок (мета):
+			input(type='text' name="meta[title]", value=work.meta.title)
+			.form_title Описание:
+			textarea.ru(name="ru[description]", rows="8",)= work.ru.description
+			textarea.en(name="en[description]", rows="8", disabled)
+			.form_title Описание (мета):
+			textarea(name="meta[description]", rows="8",)= work.meta.description
 			//- .form_title Фото:
 			//- input(type="file", name="photo")
-			//- .form_title Категория:
-			//- select(name='tag')
-			//- 	option(value='design') графический дизайн
-			//- 	option(value='graphic') графика
-			//- 	option(value='art') живопись
-			//- br
-			//- input(type='button', class='toggle_eng', value='Перевод')
-			input(type="submit", value="Добавить")
+			.form_title Категория:
+			select(name='tag')
+				option(value='urbanism') Урбанизм
+				option(value='architecture') Архитектура
+				option(value='urban_projects') Городские проекты
+				option(value='exhibitions') Выставки
+				option(value='industrial_design') Промышленный дизайн
+				option(value='navigation') Навигация
+				option(value='graphic_design') Графический дизайн
+			br
+			input(type='button', class='toggle_eng', value='Перевод')
+			input(type="submit", value="Редактировать")

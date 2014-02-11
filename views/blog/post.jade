@@ -1,7 +1,7 @@
 extends ../layout
 
 block title
-	title= post.meta.title
+	title= post.meta.title || post.ru.title
 	meta(name='description', content=post.meta.description)
 
 block content_style

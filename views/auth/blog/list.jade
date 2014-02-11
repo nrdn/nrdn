@@ -1,7 +1,9 @@
 extends ../../layout
 
 block content
+	a.back_link(href='/auth') < Назад
 	h1 Список постов
 	each post in posts
 		a(href='/auth/edit/posts/' + post._id)= post.ru.title
+		br
 		br
