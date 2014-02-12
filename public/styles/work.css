@@ -1,8 +1,8 @@
 .content_block {
-	width: 1240px;
+	width: 1195px;
 	left: 50%;
 	margin-left: -620px;
-	outline: none;
+	margin-top: 70px;
 }
 
 .content_block, .menu_block {
@@ -19,16 +19,27 @@
 
 .work_description_block {
 	width: 350px;
-	min-height: 50px;
 	float: right;
 	padding: 5px;
-	background-color: white;
+	overflow: hidden;
 	background-color: rgba(255,255,255,0.7);
 }
 
 .work_description_block:hover {
 	cursor: pointer;
 	background-color: rgba(255,255,255,1);
+}
+
+.hide {
+	width: 20px;
+	height: 20px;
+	text-align: center;
+}
+
+.hide:after {
+	font: 18px/22px 'Social';
+	color: black;
+	content: '';
 }
 
 .background_item:last-child {
@@ -69,6 +80,7 @@
 	margin-right: 15px;
 	color: white;
 	display: inline;
+	cursor: pointer;
 }
 
 * {

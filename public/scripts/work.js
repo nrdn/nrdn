@@ -3,7 +3,15 @@ $(document).ready(function() {
 	var w_count = 0;
 
 	$('.work_description_block').click(function(event) {
-		$(this).hide();
+		$(this).data('clicked', !$(this).data('clicked'));
+		$(this).toggleClass('hide');
+
+		if ($(this).data('clicked')) {
+			$(this).children().hide();
+		}
+		else {
+			$(this).children().show();
+		}
 	});
 
 	$('.dot:first').text('●');
