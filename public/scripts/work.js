@@ -27,6 +27,7 @@ $(document).ready(function() {
 
 	$(document).click(function(event) {
 		var target = $(event.target);
+		$('.round_click_block').hide();
 
 		if (target.is( ':not(.logo, .menu_items a, .work_description_block, .work_title, .work_description)' )) {
 			w_count++;
