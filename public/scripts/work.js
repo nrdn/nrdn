@@ -2,15 +2,24 @@ $(document).ready(function() {
 	var count = $('.background_item').length - 1;
 	var w_count = 0;
 
+	function toggleGlow () {
+		$('.background_works').toggleClass('glow');
+	}
+
+	$('.work_description_block').on('mouseover mouseout', toggleGlow);
+
 	$('.work_description_block').click(function(event) {
 		$(this).data('clicked', !$(this).data('clicked'));
 		$(this).toggleClass('hide');
 
 		if ($(this).data('clicked')) {
 			$(this).children().hide();
+			$(this).off('mouseover mouseout')
+			$('.background_works').addClass('glow');
 		}
 		else {
 			$(this).children().show();
+			$(this).on('mouseover mouseout', toggleGlow);
 		}
 	});
 

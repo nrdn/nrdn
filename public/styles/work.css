@@ -83,6 +83,11 @@
 	cursor: pointer;
 }
 
+.glow {
+	-webkit-filter: none;
+	filter: none;
+}
+
 * {
 	-webkit-transition-property: opacity;
 	-webkit-transition-duration: 0.5s;
