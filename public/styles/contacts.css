@@ -11,7 +11,6 @@
 }
 
 .about_block {
-	/*margin-top: 17px;*/
 	float: left;
 }
 
@@ -36,7 +35,7 @@
 
 .partners_block {
 	/*margin-top: 15px;*/
-	margin-left: 90px;
+	margin-left: 70px;
 	float: left;
 }
 
@@ -54,7 +53,7 @@
 	float: left;
 	background-size: cover;
 	/*outline: 1px solid black;*/
-	margin-right: 8px;
+	margin-right: 12px;
 }
 
 .patner_item:last-child {
