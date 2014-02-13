@@ -83,3 +83,7 @@
 	text-decoration: none;
 	font: 11pt/12pt 'Social';
 }
+
+.social_block a:hover {
+	color: black;
+}
