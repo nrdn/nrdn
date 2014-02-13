@@ -72,7 +72,7 @@
 }
 
 .social_block {
-	margin-top: 5px;
+	margin-top: 15px;
 	margin-bottom: 5px;
 	width: 220px;
 }
@@ -86,4 +86,9 @@
 
 .social_block a:hover {
 	color: black;
+}
+
+.about_description p:nth-child(3) {
+	margin-right: 3px;
+	float: left;
 }
