@@ -70,3 +70,16 @@
 	margin: 0px;
 	padding: 0px
 }
+
+.social_block {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 220px;
+}
+
+.social_block a {
+	margin-right: 15px;
+	color: #8b8b8b;
+	text-decoration: none;
+	font: 11pt/12pt 'Social';
+}
