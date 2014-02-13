@@ -484,6 +484,16 @@ app.post('/registr', function (req, res) {
 
 
 // ------------------------
+// *** Static Block ***
+// ------------------------
+
+
+app.get('/google9757f728e337b3c0.html', function(req, res){
+  res.render('gwm.jade');
+});
+
+
+// ------------------------
 // *** Other Block ***
 // ------------------------
 
