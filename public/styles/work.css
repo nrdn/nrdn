@@ -2,8 +2,14 @@
 	cursor: pointer;
 }
 
+.content_block {
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+}
+
 .content_block_inner {
-	max-width: 1250px;
+	max-width: 1257px;
 	margin: 0 auto;
 	min-width: 400px;
 }
@@ -24,9 +30,10 @@
 	width: 350px;
 	float: right;
 	padding: 5px;
-	/*margin-top: 10px;*/
+	margin-top: 70px;
 	overflow: hidden;
 	background-color: rgba(255,255,255,0.7);
+	/*margin-right: -4px;*/
 }
 
 .work_description_block:hover {
