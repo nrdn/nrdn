@@ -29,7 +29,7 @@ $(document).ready(function() {
 						var post_title = $('<a />', {'class':'post_title', 'href': '/blog/' + post.b_id, 'text': post.ru.title});
 						var post_body = $('<div />', {'class':'post_body', 'html': post.ru.body});
 
-						$('.content_block').append(post_item.append(post_img_link.append(post_img), post_dscription.append(post_title), post_body));
+						$('.content_block_inner').append(post_item.append(post_img_link.append(post_img), post_dscription.append(post_title), post_body));
 					});
 				}
 				else {
