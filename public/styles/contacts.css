@@ -88,7 +88,23 @@
 	color: black;
 }
 
+/*
+	Trash
+ */
+
+
 .about_description p:nth-child(3) {
 	margin-right: 3px;
 	float: left;
+}
+
+.patner_item:first-child {
+	margin-right: -19px;
+	height: 56px;
+	background-size: 91%;
+	background-repeat: no-repeat;
+	margin-top: 6px;
+}
+.patner_item:first-child:hover {
+	background-position: 0 -58px;
 }
