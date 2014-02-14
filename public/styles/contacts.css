@@ -10,6 +10,7 @@
 }
 
 .about_block {
+	margin-right: 70px;
 	max-width: 865px;
 	float: left;
 }
@@ -34,9 +35,8 @@
 }
 
 .partners_block {
-	/*margin-top: 15px;*/
-	margin-left: 70px;
-	float: left;
+	width: 700px;
+	overflow: hidden;
 }
 
 .partners_title {
