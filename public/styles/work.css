@@ -2,12 +2,10 @@
 	cursor: pointer;
 }
 
-.content_block {
-	width: 1247px;
-	left: 50%;
-	height: 100%;
-	margin-left: -620px;
-	margin-top: 0px;
+.content_block_inner {
+	max-width: 1250px;
+	margin: 0 auto;
+	min-width: 400px;
 }
 
 .content_block, .menu_block {
@@ -26,7 +24,7 @@
 	width: 350px;
 	float: right;
 	padding: 5px;
-	margin-top: 70px;
+	/*margin-top: 10px;*/
 	overflow: hidden;
 	background-color: rgba(255,255,255,0.7);
 }

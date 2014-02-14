@@ -48,7 +48,7 @@ body {
 
 .menu_block {
 	margin-top: 20px;
-	position: fixed;
+	position: absolute;
 	text-align: center;
 	z-index: 100;
 	width: 100%;

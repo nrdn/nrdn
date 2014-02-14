@@ -4,6 +4,10 @@
 	min-width: 400px;
 }
 
+.menu_block {
+	position: fixed;
+}
+
 .menu_items a:nth-child(1) {
 	/*text-decoration: underline;*/
 	border-bottom: black 1px dotted;

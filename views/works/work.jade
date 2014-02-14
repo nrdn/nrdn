@@ -16,12 +16,13 @@ block append works_bg
 			.background_item(style='background-image: url(' + iamge.path + ')')
 
 block content
-	.work_description_block
-		.work_title= work.ru.title
-		.work_description
-			!= work.ru.description
-	.round_click_block
-		.round_dot
+	.content_block_inner
+		.work_description_block
+			.work_title= work.ru.title
+			.work_description
+				!= work.ru.description
+		.round_click_block
+			.round_dot
 
 block footer
 	.dots_block
