@@ -1,9 +1,9 @@
-.content_block {
-	width: 1240px;
-	position: absolute;
-	margin-left: -620px;
-	left: 50%;
+.content_block_inner {
+	max-width: 1240px;
+	margin: 0 auto;
+	min-width: 400px;
 }
+
 
 .menu_block {
 	position: absolute;
@@ -39,7 +39,7 @@
 }*/
 
 .post_body {
-	width: 865px;
+	max-width: 865px;
 	margin-top: 25px;
 	margin-left: 375px;
 	font: 12pt/16pt 'RobotoL';

@@ -17,7 +17,7 @@
 	user-select: none;
 }
 
-.menu_items a:nth-child(1) {
+.menu_items_inner a:nth-child(1) {
 	/*text-decoration: underline;*/
 	border-bottom: black 1px dotted;
 }

@@ -10,13 +10,14 @@ block content_scripts
 	script(type='text/javascript', src='/scripts/blog.js' + version)
 
 block content
-	each post in posts
-		.post_item_block
-			a.post_title(href='/blog/' + post.b_id)
-				img.post_img(src=post.image)
-			.post_dscription_block
-				a.post_title(href='/blog/' + post.b_id)= post.ru.title
-			.post_body
-				!= post.ru.body
-	.scroll_top
-		.top_text ▲ Наверх
+	.content_block_inner
+		each post in posts
+			.post_item_block
+				a.post_title(href='/blog/' + post.b_id)
+					img.post_img(src=post.image)
+				.post_dscription_block
+					a.post_title(href='/blog/' + post.b_id)= post.ru.title
+				.post_body
+					!= post.ru.body
+		.scroll_top
+			.top_text ▲ Наверх

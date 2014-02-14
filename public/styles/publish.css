@@ -1,8 +1,7 @@
-.content_block {
-	left: 50%;
-	margin-left: -620px;
-	width: 1240px;
-	outline: none;
+.content_block_inner {
+	max-width: 1240px;
+	margin: 0 auto;
+	min-width: 400px;
 }
 
 .menu_items a:nth-child(2) {

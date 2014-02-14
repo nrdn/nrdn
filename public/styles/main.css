@@ -47,37 +47,50 @@ body {
 }
 
 .menu_block {
-	width: 1247px;
-	height: 30px;
 	margin-top: 20px;
 	position: fixed;
-	left: 50%;
-	margin-left: -630px;
-	background-color: rgba(255,255,255,0.7);
 	text-align: center;
-	padding-left: 10px;
-	margin-right: 20px;
 	z-index: 100;
-
+	width: 100%;
 }
+
+
+.menu_block_inner {
+	margin: 0 auto;
+	background-color: rgba(255,255,255,0.7);
+	height: 30px;
+	position: relative;
+	padding-left: 10px;
+	max-width: 1247px;
+	min-width: 400px;
+}
+
 
 .menu_items {
-	/*display: inline-block;*/
-	/*outline: 1px solid black;*/
 	left: 220px;
-	position: relative;
-	top: -4px;
+	position: absolute;
+	/*top: 3px;*/
 	margin: 0;
+	right: 220px;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
+
+.menu_items_inner {
+	display: inline;
+	margin: 0 auto;
+}
+
+
 .menu_items a {
-	margin-top: 10px;
+	margin-top: 6px;
 	margin-right: 45px;
 	font: 11pt/13pt 'Roboto';
+	display: inline-block;
 	text-decoration: none;
 	color: black;
-	display: block;
-	float: left;
 }
 
 .menu_items a:hover {
@@ -100,13 +113,12 @@ body {
 .logo:after {
 	content: 'Народный архитектор';
 	position: absolute;
-	width: 165px;
 	top: 1px;
+	width: 164px;
 	left: 25px;
 	font: 11pt/13pt 'Roboto';
 	color: #000;
 	text-align: left;
-	/*outline: 1px solid black;*/
 }
 
 a.logo:hover {

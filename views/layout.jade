@@ -8,14 +8,15 @@ html
 		.maket
 			.main_block
 				.menu_block
-					a.logo(href='/')
-					.menu_items
-						a(href='/works') Работы
-						a(href='/publish') Публикации
-						a(href='/blog') Блог
-						a(href='/contacts') Контакты
-					.toggle_lang_block EN
-					//- .toggle_lang_block EN
+					.menu_block_inner
+						a.logo(href='/')
+						.menu_items
+							.menu_items_inner
+								a(href='/works') Работы
+								a(href='/publish') Публикации
+								a(href='/blog') Блог
+								a(href='/contacts') Контакты
+						.toggle_lang_block EN
 				.content_block
 					block content
 				.footer_block
