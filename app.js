@@ -143,7 +143,7 @@ app.post('/blog_load', function (req, res) {
 
 app.get('/', function(req, res) {
 
-  Work.find().sort('-date').limit(6).exec(function(err, works) {
+  Work.find().sort('-date').limit(12).exec(function(err, works) {
     res.render('index', {works: works});
   });
 });
