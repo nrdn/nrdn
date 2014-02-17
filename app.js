@@ -513,6 +513,11 @@ app.post('/registr', function (req, res) {
 // *** Other Block ***
 // ------------------------
 
+
+app.get('/blog.html', function(req, res){
+  res.redirect('/blog');
+});
+
 app.get('/google9757f728e337b3c0.html', function(req, res){
   res.render('gwm.jade');
 });
