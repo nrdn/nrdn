@@ -67,8 +67,17 @@ $(document).ready(function() {
 		});
 
 		var tags = getUnique(arr_items_tags);
+		var direction = ['urbanism', 'architecture', 'urban_projects', 'exhibitions', 'industrial_design', 'navigation', 'graphic_design'];
+		var result = [];
 
-		$.each(tags, function(index, tag) {
+		for (var i = 0; i < direction.length; ++i){
+			for (var j = 0; j < tags.length; ++j){
+				if (direction[i] == tags[j])
+						result.push(direction[i]);
+			}
+		}
+
+		$.each(result, function(index, tag) {
 			var tags = {'urbanism':'Урбанизм', 'architecture':'Архитектура', 'urban_projects':'Городские проекты', 'exhibitions':'Выставки', 'industrial_design':'Промышленный дизайн', 'navigation':'Навигация', 'graphic_design':'Графический дизайн'}
 			var tag_items = $(items).filter('.' + tag);
 			var work_tag = $('<div />', {'class':'work_tag ' + tag});
@@ -93,7 +102,7 @@ $(document).ready(function() {
 
 		var years = getUnique(arr_items_years);
 
-		$.each(years, function(index, year) {
+		$.each(years.reverse(), function(index, year) {
 			var year_items = $(items).filter('.' + year);
 			var work_tag = $('<div />', {'class':'work_tag ' + year});
 			var work_tag_title = $('<div />', {'class':'work_tag_title', 'text':year});
