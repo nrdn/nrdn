@@ -99,10 +99,36 @@ function checkAuth (req, res, next) {
     res.redirect('/login');
 }
 
+app.use(function(req, res, next){
+  res.status(404);
+
+  // respond with html page
+  if (req.accepts('html')) {
+    res.render('error/404.jade', { url: req.url });
+    return;
+  }
+
+  // respond with json
+  if (req.accepts('json')) {
+    res.send({ error: 'Not found' });
+    return;
+  }
+
+  // default to plain-text
+  res.type('txt').send('Not found');
+});
+
+app.use(function(err, req, res, next){
+
+  res.status(err.status || 500);
+  res.render('error/500.jade', { error: err });
+});
+
 
 // ------------------------
 // *** Post Params Block ***
 // ------------------------
+
 
 app.post('/edit', function (req, res) {
   var files = req.files;
@@ -484,27 +510,20 @@ app.post('/registr', function (req, res) {
 
 
 // ------------------------
-// *** Static Block ***
+// *** Other Block ***
 // ------------------------
-
 
 app.get('/google9757f728e337b3c0.html', function(req, res){
   res.render('gwm.jade');
 });
 
+// app.get('/error', function (req, res) {
+//   res.render('error');
+// });
 
-// ------------------------
-// *** Other Block ***
-// ------------------------
-
-
-app.get('/error', function (req, res) {
-  res.render('error');
-});
-
-app.get('*', function(req, res){
-  res.render('error');
-});
+// app.get('*', function(req, res){
+//   res.render('error');
+// });
 
 
 app.listen(3000);
