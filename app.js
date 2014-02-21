@@ -22,6 +22,13 @@ app.use(function(req, res, next) {
   res.locals.session = req.session;
   next();
 });
+app.use(function(req, res, next) {
+  if (req.headers.host.match(/^www/) !== null ) {
+    res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url);
+  } else {
+    next();
+  }
+});
 app.use(app.router);
 
 
@@ -534,13 +541,13 @@ app.get('/sitemap.xml', function(req, res){
 //   res.render('error');
 // });
 
-app.get('/*', function(req, res, next) {
-  if (req.headers.host.match(/^www/) !== null ) {
-    res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url);
-  } else {
-    next();
-  }
-});
+// app.get('/*', function(req, res, next) {
+//   if (req.headers.host.match(/^www/) !== null ) {
+//     res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url);
+//   } else {
+//     next();
+//   }
+// });
 
 
 app.listen(3000);
