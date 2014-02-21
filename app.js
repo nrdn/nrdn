@@ -534,9 +534,9 @@ app.get('/sitemap.xml', function(req, res){
 //   res.render('error');
 // });
 
-app.all('*', function(req, res, next) {
-  if (req.host.match(/^www/) !== null ) {
-    res.redirect('http://' + req.host.replace(/^www\./, '') + req.url);
+app.get('/*', function(req, res, next) {
+  if (req.headers.host.match(/^www/) !== null ) {
+    res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url);
   } else {
     next();
   }
