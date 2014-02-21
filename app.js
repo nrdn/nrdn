@@ -22,13 +22,6 @@ app.use(function(req, res, next) {
   res.locals.session = req.session;
   next();
 });
-app.use(function(req, res, next) {
-  if (req.headers.host.match(/^www/) !== null ) {
-    res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url);
-  } else {
-    next();
-  }
-});
 app.use(app.router);
 
 
@@ -129,6 +122,14 @@ app.use(function(err, req, res, next){
 
   res.status(err.status || 500);
   res.render('error/500.jade', { error: err });
+});
+
+app.use(function(req, res, next) {
+  if (req.headers.host.match(/^www/) !== null ) {
+    res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url);
+  } else {
+    next();
+  }
 });
 
 
