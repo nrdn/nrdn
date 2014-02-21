@@ -519,7 +519,11 @@ app.get('/blog.html', function(req, res){
 });
 
 app.get('/google9757f728e337b3c0.html', function(req, res){
-  res.render('gwm.jade');
+  res.render('seo/gwm.jade');
+});
+
+app.get('/sitemap.xml', function(req, res){
+  res.render('seo/sitemap.jade');
 });
 
 // app.get('/error', function (req, res) {
@@ -529,6 +533,14 @@ app.get('/google9757f728e337b3c0.html', function(req, res){
 // app.get('*', function(req, res){
 //   res.render('error');
 // });
+
+app.get('/*', function(req, res, next) {
+  if (req.headers.host.match(/^www/) !== null ) {
+    res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
+  } else {
+    next();
+  }
+});
 
 
 app.listen(3000);
