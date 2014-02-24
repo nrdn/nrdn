@@ -1,0 +1,5 @@
+User-agent: *
+disallow: *start
+
+host: http://nrdn.ru
+Sitemap: http://nrdn.ru/sitemap.xml

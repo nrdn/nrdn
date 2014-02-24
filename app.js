@@ -530,7 +530,11 @@ app.get('/google9757f728e337b3c0.html', function(req, res){
 });
 
 app.get('/sitemap.xml', function(req, res){
-  res.render('seo/sitemap.jade');
+  res.sendfile('sitemap.xml',  {root: './public'});
+});
+
+app.get('/robots.txt', function(req, res){
+  res.sendfile('robots.txt',  {root: './public'});
 });
 
 // app.get('/error', function (req, res) {
@@ -539,14 +543,6 @@ app.get('/sitemap.xml', function(req, res){
 
 // app.get('*', function(req, res){
 //   res.render('error');
-// });
-
-// app.get('/*', function(req, res, next) {
-//   if (req.headers.host.match(/^www/) !== null ) {
-//     res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url);
-//   } else {
-//     next();
-//   }
 // });
 
 
