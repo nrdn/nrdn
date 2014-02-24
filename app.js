@@ -125,10 +125,16 @@ app.use(function(req, res, next){
   res.type('txt').send('Not found');
 });
 
+// app.use(function(err, req, res, next){
+
+//   res.status(err.status || 500);
+//   res.render('error/500.jade', { error: err });
+// });
+
 app.use(function(err, req, res, next){
 
-  res.status(err.status || 500);
-  res.render('error/500.jade', { error: err });
+  res.status(404);
+  res.render('error/404.jade', { error: err });
 });
 
 
