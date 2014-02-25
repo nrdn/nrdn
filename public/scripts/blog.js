@@ -27,7 +27,7 @@ $(document).ready(function() {
 						var post_img_link = $('<a />', {'class':'post_title', 'href': '/blog/' + post.b_id});
 						var post_dscription = $('<div />', {'class':'post_dscription_block'});
 						var post_title = $('<a />', {'class':'post_title', 'href': '/blog/' + post.b_id, 'text': post.ru.title});
-						var post_body = $('<div />', {'class':'post_body', 'html': post.ru.body});
+						var post_body = $('<div />', {'class':'post_body', 'html': post.ru.body.substr(0, 400) + '...'});
 
 						$('.content_block_inner').append(post_item.append(post_img_link.append(post_img), post_dscription.append(post_title), post_body));
 					});
