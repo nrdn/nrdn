@@ -355,8 +355,8 @@ app.post('/auth/edit/works/:id', function (req, res) {
   var id = req.params.id;
 
   Work.findById(id, function(err, work) {
-    // work.tag = post.tag;
-    // work.logo = post.logo;
+    work.tag = post.tag;
+    work.logo = post.logo;
     work.ru.title = post.ru.title;
     work.ru.description = post.ru.description;
     work.meta.title = post.meta.title;
