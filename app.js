@@ -316,6 +316,7 @@ app.post('/auth/add/work', function (req, res) {
   var files = req.files;
   var work = new Work();
   var dir = __dirname + '/public/images/works/' + work._id;
+  // var small = __dirname + '/public/images/works/' + work._id + '/small';
 
   work.w_id = work._id.toString().substr(-4);
   work.tag = post.tag;
@@ -331,19 +332,24 @@ app.post('/auth/add/work', function (req, res) {
   }
 
   fs.mkdir(dir, function() {
-    async.forEach(post.images, function(image, callback) {
-      var oldPath = __dirname + '/public' + image.path;
-      var newPath = dir + '/' + image.path.slice(9);
-      var pubPath = '/images/works/' + work._id + '/' + image.path.slice(9);
+    fs.mkdir(dir + '/small' ,function() {
+      async.forEach(post.images, function(image, callback) {
+        var oldPath = __dirname + '/public' + image.path;
+        var newPath = dir + '/' + image.path.slice(9);
+        var newPathSmall = dir + '/small/' + image.path.slice(9);
+        var pubPath = '/images/works/' + work._id + '/' + image.path.slice(9);
 
-      fs.rename(oldPath, newPath, function() {
-        image.path = pubPath;
-        callback();
-      });
-    }, function() {
-      work.images = post.images;
-      work.save(function(err) {
-        res.redirect('back');
+        gm(oldPath).resize(300, false).quality(80).noProfile().write(newPathSmall, function() {
+          fs.rename(oldPath, newPath, function() {
+            image.path = pubPath;
+            callback();
+          });
+        });
+      }, function() {
+        work.images = post.images;
+        work.save(function(err) {
+          res.redirect('back');
+        });
       });
     });
   });
