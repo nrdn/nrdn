@@ -1,6 +1,8 @@
 var offset = 0;
 
 $(document).ready(function() {
+	var cont = $('.content_block').height();
+	var position = cont;
 
 	function arrowUp () {
 		var e = $('.scroll_top');
@@ -15,9 +17,9 @@ $(document).ready(function() {
 
 	function scrollLoader () {
 		var maket = $('.maket').height();
-		var cont = $('.content_block').height();
 
-		if (cont - maket <= $('.maket').scrollTop() + 2250) {
+		if (position - maket <= $('.maket').scrollTop() + 2250) {
+			position += cont;
 			offset+=4;
 			$.post('/blog_load', {offset: offset}).done(function(posts) {
 				if (posts != 'end') {
