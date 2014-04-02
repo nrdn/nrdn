@@ -26,7 +26,7 @@ $(document).ready(function() {
 				if (posts != 'end') {
 					$.each(posts, function(index, post) {
 						var post_img = $('<img />', {'class':'post_img', 'src': post.image});
-						$('.main').eq(offset + index + 1).append(post_img);
+						$('.main').eq(offset + index).append(post_img);
 					});
 				}
 				else {
