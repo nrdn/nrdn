@@ -19,9 +19,10 @@ $(document).ready(function() {
 		var maket = $('.maket').height();
 
 		if (position - maket <= $('.maket').scrollTop() + 250) {
-			position += cont;
 			offset+=4;
+
 			$.post('/blog_load', {offset: offset}).done(function(posts) {
+				position += cont;
 				if (posts != 'end') {
 					$.each(posts, function(index, post) {
 						var post_img = $('<img />', {'class':'post_img', 'src': post.image});
