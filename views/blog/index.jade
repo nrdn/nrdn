@@ -11,10 +11,11 @@ block content_scripts
 
 block content
 	.content_block_inner
-		each post in posts
+		each post, index in posts
 			.post_item_block
-				a.post_title(href='/blog/' + post.b_id)
-					img.post_img(src=post.image)
+				a.post_title.main(href='/blog/' + post.b_id)
+					if (index <= 3)
+						img.post_img(src=post.image)
 				.post_dscription_block
 					a.post_title(href='/blog/' + post.b_id)= post.ru.title
 				.post_body

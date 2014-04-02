@@ -226,7 +226,7 @@ app.get('/works/:id', function(req, res) {
 
 app.get('/blog', function(req, res) {
 
-  Post.find().sort('-date').limit(4).exec(function(err, posts) {
+  Post.find().sort('-date').exec(function(err, posts) {
     res.render('blog', {posts: posts});
   });
 });
