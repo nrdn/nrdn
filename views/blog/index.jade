@@ -14,7 +14,7 @@ block content
 		each post, index in posts
 			.post_item_block
 				a.post_title.main(href='/blog/' + post.b_id)
-					if (index <= 4)
+					if (index <= 3)
 						img.post_img(src=post.image)
 				.post_dscription_block
 					a.post_title(href='/blog/' + post.b_id)= post.ru.title
