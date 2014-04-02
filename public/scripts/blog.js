@@ -20,9 +20,9 @@ $(document).ready(function() {
 
 		if (position - maket <= $('.maket').scrollTop() + 250) {
 			offset+=4;
+			position += cont;
 
 			$.post('/blog_load', {offset: offset}).done(function(posts) {
-				position += cont;
 				if (posts != 'end') {
 					$.each(posts, function(index, post) {
 						var post_img = $('<img />', {'class':'post_img', 'src': post.image});
