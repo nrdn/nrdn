@@ -69,9 +69,17 @@
 .work_logo {
 	width: 75px;
 	height: 75px;
-	display: block;
 	position: relative;
-	margin:0 auto;
+	margin: 0 auto;
+	line-height: 75px;
+	text-align: center;
+}
+
+.work_logo svg {
+	max-width: 75px!important;
+	max-height: 75px!important;
+	margin: 0 auto;
+	vertical-align: middle;
 }
 
 .work_title {
