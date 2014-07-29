@@ -67,7 +67,7 @@ $(document).ready(function() {
 		});
 
 		var tags = getUnique(arr_items_tags);
-		var direction = ['urbanism', 'architecture', 'urban_projects', 'exhibitions', 'industrial_design', 'navigation', 'graphic_design'];
+		var direction = ['urbanism', 'architecture', 'urban_projects', 'exhibitions', 'industrial_design', 'installation', 'navigation', 'graphic_design'];
 		var result = [];
 
 		for (var i = 0; i < direction.length; ++i){
@@ -78,7 +78,7 @@ $(document).ready(function() {
 		}
 
 		$.each(result, function(index, tag) {
-			var tags = {'urbanism':'Урбанизм', 'architecture':'Архитектура', 'urban_projects':'Городские проекты', 'exhibitions':'Выставки', 'industrial_design':'Промышленный дизайн', 'navigation':'Навигация', 'graphic_design':'Графический дизайн'}
+			var tags = {'urbanism':'Урбанизм', 'architecture':'Архитектура', 'urban_projects':'Городские проекты', 'exhibitions':'Выставки', 'industrial_design':'Промышленный дизайн', 'installation': 'Инсталяции', 'navigation':'Навигация', 'graphic_design':'Графический дизайн'}
 			var tag_items = $(items).filter('.' + tag);
 			var work_tag = $('<div />', {'class':'work_tag ' + tag});
 			var work_tag_title = $('<div />', {'class':'work_tag_title', 'text':tags[tag]});
