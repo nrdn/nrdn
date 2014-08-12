@@ -3,6 +3,8 @@ extends ../layout
 block title
 	title= work.meta.title || work.ru.title
 	meta(name='description', content=work.meta.description)
+	each iamge in work.images.reverse()
+			meta(property='og:image', content=''+iamge.path+'.jpg')
 
 block content_style
 	link(rel='stylesheet', type='text/css', href='/styles/work.css' + version)
