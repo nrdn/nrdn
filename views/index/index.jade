@@ -2,7 +2,8 @@ extends ../layout
 
 block title
 	title НАРОДНЫЙ АРХИТЕКТОР
-
+	each work in works
+		meta(property='og:image', content='http://nrdn.ru'+work.images[0].path+'')
 block content_style
 	link(rel='stylesheet', type='text/css', href='/styles/index.css' + version)
 
