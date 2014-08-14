@@ -2,8 +2,10 @@ extends ../layout
 
 block title
 	title НАРОДНЫЙ АРХИТЕКТОР
+	meta(property='og:description', content='107031 Россия, Москва, ул. Большая Дмитровка, д. 24. Ближайшие станции метро - Тверская, Чеховская, Пушкинская, Театральная. +7 (495) 629-03-40 / mail@nrdn.ru')
 	each work in works
 		meta(property='og:image', content='http://nrdn.ru'+work.images[0].path+'')
+	meta(property='og:image', content='http://nrdn.ru/images/design/logo.png')
 block content_style
 	link(rel='stylesheet', type='text/css', href='/styles/index.css' + version)
 
