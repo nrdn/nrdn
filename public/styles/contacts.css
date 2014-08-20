@@ -108,9 +108,14 @@
 .patner_item:first-child:hover {
 	background-position: 0 -58px;
 }
+.big_image {
+	height: 485px;
+	background: url('../images/design/big_image.png') 50%;
+	background-size: cover;
+}
 .big_phone, .big_email {
-    font: 14pt/20pt 'RobotoL';
+  font: 14pt/20pt 'RobotoL';
 }
 .big_email {
-    padding-bottom: 5px;    
+  padding-bottom: 5px;    
 }

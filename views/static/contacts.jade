@@ -8,13 +8,14 @@ block content_style
 	link(rel='stylesheet', type='text/css', href='/styles/contacts.css' + version)
 
 block content_scripts
-	script(type='text/javascript', src='http://maps.googleapis.com/maps/api/js?key=AIzaSyDzWhF4BjQZUOautL3wOogi5GT0Ule_RH8&sensor=false')
+	//-script(type='text/javascript', src='http://maps.googleapis.com/maps/api/js?key=AIzaSyDzWhF4BjQZUOautL3wOogi5GT0Ule_RH8&sensor=false')
 	script(type='text/javascript', src='/scripts/static.js' + version)
-	script(type='text/javascript', src='/scripts/g_map.js' + version)
+	//-script(type='text/javascript', src='/scripts/g_map.js' + version)
 
 block content
 	.content_block_inner
-		.map_block
+		.big_image
+		//-.map_block
 			#map-canvas
 		.about_block
 			.about_title НАРОДНЫЙ АРХИТЕКТОР
