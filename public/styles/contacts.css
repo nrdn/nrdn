@@ -45,6 +45,8 @@
 
 .partners_list {
 	margin-top: 2px;
+	display: table;
+	margin-bottom: 18px;
 }
 
 .patner_item {
@@ -97,15 +99,17 @@
 	margin-right: 3px;
 	float: left;
 }
-
-.patner_item:first-child {
+.partners_list:nth-child(0) {
+	outline: 1px solid #fc0;
+}
+.patner_item.aqua {
 	margin-right: -19px;
 	height: 56px;
 	background-size: 91%;
 	background-repeat: no-repeat;
 	margin-top: 6px;
 }
-.patner_item:first-child:hover {
+.patner_item.aqua:hover {
 	background-position: 0 -58px;
 }
 .big_image {
