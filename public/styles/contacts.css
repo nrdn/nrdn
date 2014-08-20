@@ -108,3 +108,9 @@
 .patner_item:first-child:hover {
 	background-position: 0 -58px;
 }
+.big_phone, .big_email {
+    font: 14pt/20pt 'RobotoL';
+}
+.big_email {
+    padding-bottom: 5px;    
+}
