@@ -40,6 +40,7 @@
 }
 .partners_title {
 	font: 14pt/16pt 'Roboto';
+	margin-bottom: 5px;
 }
 .partners_title:nth-child(3) {
 	margin-top: 40px;
