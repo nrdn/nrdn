@@ -38,11 +38,12 @@
 	width: 783px;
 	overflow: hidden;
 }
-
 .partners_title {
 	font: 14pt/16pt 'Roboto';
 }
-
+.partners_title:nth-child(3) {
+	margin-top: 40px;
+}
 .partners_list {
 	margin-top: 2px;
 	display: table;
@@ -118,7 +119,7 @@
 	background-size: cover;
 }
 .big_phone, .big_email {
-  font: 14pt/20pt 'RobotoL';
+  font: 11pt/15pt 'RobotoL';
 }
 .big_email {
   padding-bottom: 5px;    
