@@ -1,7 +1,10 @@
 .content_block {
 	/*min-height: 600px;*/
-	/*width: 930px;*/
-	/*background-color: white;*/
+	width: 1280px;
+	left: 50%;
+	margin-left: -640px;
+	position:  absolute;
+	/*background-color: red;*/
 }
 
 input {
@@ -44,21 +47,52 @@ textarea {
 	text-decoration: underline;
 }
 
-.img_description {
-	width: 350px;
-	height: 200px;
-	background-color: grey;
-	outline: none;
+.form_images_upload {
+  width: 435px;
+  min-height: 160px;
+  outline: 1px solid #f00;
+  padding: 5px;
 }
 
-.img_upload {
-	min-height: 300px;
-	overflow: hidden;
-	background-color: #69918a;
+.form_desc_title {
+  margin-bottom: 10px;
 }
 
-.img_item {
-	float: left;
-	margin-right: 10px;
-	margin-bottom: 10px;
+.image_upload_block {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.image_upload_block:last-child {
+  margin-bottom: 0px;
+}
+
+.image_upload_preview {
+  width: 210px;
+  height: 160px;
+  margin-right: 5px;
+  float: left;
+  background-size: cover;
+  background-position: center;
+}
+
+.image_upload_delete {
+  background-color: #fff;
+  color: #f00;
+  font-size: 14px;
+  padding: 2px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.image_upload_delete:hover {
+  color: #fff;
+  background-color: #f00;
+}
+
+.image_upload_description {
+  width: 214px;
+  height: 154px;
+  border: 1px solid #000;
+  margin: 0;
 }

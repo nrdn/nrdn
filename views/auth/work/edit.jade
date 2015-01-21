@@ -4,7 +4,10 @@ block content_style
 	link(rel='stylesheet', type='text/css', href='/styles/add.css')
 
 block content_scripts
+	script(type='text/javascript', src='/scripts/jquery.filedrop.js')
+	script(type='text/javascript', src='/scripts/jquery-ui-1.10.4.custom.min.js')
 	script(type='text/javascript', src='/scripts/add.js')
+	script(type='text/javascript', src='/scripts/upload.js')
 
 block content
 	.form_block
@@ -23,6 +26,9 @@ block content
 			textarea(name="meta[description]", rows="8",)= work.meta.description
 			.form_title Лого:
 			input(type='text' name="logo", value=work.logo)
+			.form_title Изображения:
+			.form_images_upload
+				.form_desc_title Нажми или перетащи
 			.form_title Категория:
 			select(name='tag')
 				option(value='urbanism', selected=work.tag=='urbanism') Урбанизм

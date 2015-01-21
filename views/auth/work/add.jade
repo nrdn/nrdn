@@ -4,28 +4,41 @@ block content_style
 	link(rel='stylesheet', type='text/css', href='/styles/add.css')
 
 block content_scripts
+	script(type='text/javascript', src='/scripts/jquery.filedrop.js')
+	script(type='text/javascript', src='/scripts/jquery-ui-1.10.4.custom.min.js')
 	script(type='text/javascript', src='/scripts/add.js')
-	script(type='text/javascript', src='/scripts/add_work.js')
-	script(type='text/javascript', src='/scripts/mfupload.js')
-	script(type='text/javascript', src='/scripts/jquery-ui-1.10.3.custom.min.js')
+	script(type='text/javascript', src='/scripts/upload.js')
 
 block content
 	.form_block
 		a.back_link(href='/auth') < Назад
-		.page_title ДОБАВИТЬ РАБОТУ
-		.meta_title(contenteditable) Заголовок (мета)
-		.title(contenteditable) Заголовок
-		.w_logo(contenteditable) Лого
-		.meta_description(contenteditable) Описание (мета)
-		.description(contenteditable) Описание
-		select(name='tag')
-			option(value='urbanism') Урбанизм
-			option(value='architecture') Архитектура
-			option(value='urban_projects') Городские проекты
-			option(value='exhibitions') Выставки
-			option(value='industrial_design') Промышленный дизайн
-			option(value='installation') Инсталяции
-			option(value='navigation') Навигация
-			option(value='graphic_design') Графический дизайн
-		.img_upload
-		.sub Отправить
+		.title ДОБАВИТЬ РАБОТУ
+		form(action="", method="post", enctype="multipart/form-data")
+			.form_title Заголовок:
+			input.ru(type='text' name="ru[title]",)
+			input.en(type='text' name="en[title]", disabled)
+			.form_title Заголовок (мета):
+			input(type='text' name="meta[title]",)
+			.form_title Описание:
+			textarea.ru(name="ru[description]", rows="8",)
+			textarea.en(name="en[description]", rows="8", disabled)
+			.form_title Описание (мета):
+			textarea(name="meta[description]", rows="8",)
+			.form_title Лого:
+			input(type='text' name="logo")
+			.form_title Изображения:
+			.form_images_upload
+				.form_desc_title Нажми или перетащи
+			.form_title Категория:
+			select(name='tag')
+				option(value='urbanism') Урбанизм
+				option(value='architecture') Архитектура
+				option(value='urban_projects') Городские проекты
+				option(value='exhibitions') Выставки
+				option(value='industrial_design') Промышленный дизайн
+				option(value='installation') Инсталяции
+				option(value='navigation') Навигация
+				option(value='graphic_design') Графический дизайн
+			br
+			input(type='button', class='toggle_eng', value='Перевод')
+			input(type="submit", value="Добавить")

@@ -1,5 +1,6 @@
 var fs = require('fs');
 var async = require('async');
+var mkdirp = require('mkdirp');
 var express = require('express');
     var app = express();
 var gm = require('gm').subClass({ imageMagick: true });
@@ -131,11 +132,11 @@ app.use(function(req, res, next){
 //   res.render('error/500.jade', { error: err });
 // });
 
-app.use(function(err, req, res, next){
+// app.use(function(err, req, res, next){
 
-  res.status(404);
-  res.render('error/404.jade', { error: err });
-});
+//   res.status(404);
+//   res.render('error/404.jade', { error: err });
+// });
 
 
 // ------------------------
@@ -143,15 +144,14 @@ app.use(function(err, req, res, next){
 // ------------------------
 
 
-app.post('/edit', function (req, res) {
+app.post('/preview', function (req, res) {
   var files = req.files;
-  var name = new Date().getTime();
-  var ext = files.mf_file_undefined.type.slice(6);
-  var newPath = __dirname + '/public/preview/' + name;
+  var date = new Date();
+  date = date.getTime();
+  var newPath = '/preview/' + date + '.' + files.image.extension;
 
-  gm(files.mf_file_undefined.path).resize(1600, false).quality(80).noProfile().write(newPath, function() {
-    var path = {'path':'/preview/' + name}
-    res.send(path);
+  gm(files.image.path).resize(1600, false).quality(80).write(__dirname + '/public' + newPath, function() {
+    res.send(newPath);
   });
 });
 
@@ -315,8 +315,7 @@ app.post('/auth/add/work', function (req, res) {
   var post = req.body;
   var files = req.files;
   var work = new Work();
-  var dir = __dirname + '/public/images/works/' + work._id;
-  // var small = __dirname + '/public/images/works/' + work._id + '/small';
+  var images = [];
 
   work.w_id = work._id.toString().substr(-4);
   work.tag = post.tag;
@@ -331,28 +330,54 @@ app.post('/auth/add/work', function (req, res) {
     work.en.description = post.en.description;
   }
 
-  fs.mkdir(dir, function() {
-    fs.mkdir(dir + '/small' ,function() {
-      async.forEach(post.images, function(image, callback) {
-        var oldPath = __dirname + '/public' + image.path;
-        var newPath = dir + '/' + image.path.slice(9);
-        var newPathSmall = dir + '/small/' + image.path.slice(9);
-        var pubPath = '/images/works/' + work._id + '/' + image.path.slice(9);
 
-        gm(oldPath).resize(300, false).quality(80).noProfile().write(newPathSmall, function() {
-          fs.rename(oldPath, newPath, function() {
-            image.path = pubPath;
-            callback();
-          });
-        });
-      }, function() {
-        work.images = post.images;
-        work.save(function(err) {
-          res.redirect('back');
-        });
+  if (!post.images) {
+    return (function () {
+      work.images = [];
+      work.save(function() {
+        res.redirect('back');
       });
+    })();
+  }
+
+  var public_path = __dirname + '/public';
+
+  var images_path = {
+    original: '/images/works/' + work._id + '/',
+    thumb: '/images/works/' + work._id + '/small/',
+  }
+
+  mkdirp.sync(public_path + images_path.original);
+  mkdirp.sync(public_path + images_path.thumb);
+
+  post.images.path.forEach(function(item, i) {
+    images.push({
+      path: post.images.path[i],
+      description: post.images.description[i]
     });
   });
+
+  async.forEachSeries(images, function(image, callback) {
+    var name = new Date();
+    name = name.getTime();
+    var original_path = images_path.original + name + '.jpg';
+    var thumb_path = images_path.thumb + name + '.jpg';
+
+    gm(public_path + image.path).resize(300, false).write(public_path + thumb_path, function() {
+      gm(public_path + image.path).write(public_path + original_path, function() {
+        work.images.push({
+          path: original_path,
+          description: image.description
+        });
+        callback();
+      });
+    });
+  }, function() {
+    work.save(function() {
+      res.redirect('back');
+    });
+  });
+
 });
 
 app.post('/auth/edit/works/:id', function (req, res) {
