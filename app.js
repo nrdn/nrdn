@@ -1,6 +1,7 @@
 var fs = require('fs');
 var async = require('async');
 var mkdirp = require('mkdirp');
+var del = require('del');
 var express = require('express');
     var app = express();
 var gm = require('gm').subClass({ imageMagick: true });
@@ -286,9 +287,20 @@ app.get('/auth/edit/works', checkAuth, function (req, res) {
 
 app.get('/auth/edit/works/:id', checkAuth, function (req, res) {
   var id = req.params.id;
+  var images_preview = [];
+  var public_path = __dirname + '/public';
+  var preview_path = '/preview/';
 
   Work.findById(id, function(err, work) {
-    res.render('auth/work/edit.jade', {work: work});
+    async.forEach(work.images, function(image, callback) {
+      var image_path = __dirname + '/public' + image.path;
+      var image_name = image.path.split('/')[4];
+      fs.createReadStream(image_path).pipe(fs.createWriteStream(public_path + preview_path + image_name));
+      images_preview.push(preview_path + image_name);
+      callback();
+    }, function() {
+      res.render('auth/work/edit.jade', {work: work, images_preview: images_preview});
+    });
   });
 });
 
@@ -384,6 +396,7 @@ app.post('/auth/edit/works/:id', function (req, res) {
   var post = req.body;
   var files = req.files;
   var id = req.params.id;
+  var images = [];
 
   Work.findById(id, function(err, work) {
     work.tag = post.tag;
@@ -398,28 +411,58 @@ app.post('/auth/edit/works/:id', function (req, res) {
       work.en.description = post.en.description;
     }
 
-    work.save(function() {
-      res.redirect('back');
-    });
-  });
+    var public_path = __dirname + '/public';
 
-  //   if (files.image.size != 0) {
-  //     var newPath = __dirname + '/public/images/works/' + work._id + '.jpg';
-  //     gm(files.image.path).resize(1600, false).quality(80).noProfile().write(newPath, function() {
-  //       work.image = '/images/works/' + work._id + '.jpg';
-  //       work.save(function() {
-  //         fs.unlink(files.image.path);
-  //         res.redirect('back');
-  //       });
-  //     });
-  //   }
-  //   else {
-  //     work.save(function() {
-  //       fs.unlink(files.image.path);
-  //       res.redirect('back');
-  //     });
-  //   }
-  // });
+    var images_path = {
+      original: '/images/works/' + work._id + '/',
+      thumb: '/images/works/' + work._id + '/small/',
+    }
+
+    del.sync([public_path + images_path.original, public_path + images_path.thumb]);
+
+    if (!post.images) {
+      return (function () {
+        work.images = [];
+        work.save(function() {
+          res.redirect('back');
+        });
+      })();
+    }
+
+    mkdirp.sync(public_path + images_path.original);
+    mkdirp.sync(public_path + images_path.thumb);
+
+    work.images = [];
+
+    post.images.path.forEach(function(item, i) {
+      images.push({
+        path: post.images.path[i],
+        description: post.images.description[i]
+      });
+    });
+
+    async.forEachSeries(images, function(image, callback) {
+      var name = new Date();
+      name = name.getTime();
+      var original_path = images_path.original + name + '.jpg';
+      var thumb_path = images_path.thumb + name + '.jpg';
+
+      gm(public_path + image.path).resize(300, false).write(public_path + thumb_path, function() {
+        gm(public_path + image.path).write(public_path + original_path, function() {
+          work.images.push({
+            path: original_path,
+            description: image.description
+          });
+          callback();
+        });
+      });
+    }, function() {
+      work.save(function() {
+        res.redirect('back');
+      });
+    });
+
+  });
 });
 
 app.post('/auth/add/post', function (req, res) {

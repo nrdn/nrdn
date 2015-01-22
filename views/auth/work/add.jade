@@ -26,9 +26,6 @@ block content
 			textarea(name="meta[description]", rows="8",)
 			.form_title Лого:
 			input(type='text' name="logo")
-			.form_title Изображения:
-			.form_images_upload
-				.form_desc_title Нажми или перетащи
 			.form_title Категория:
 			select(name='tag')
 				option(value='urbanism') Урбанизм
@@ -39,6 +36,11 @@ block content
 				option(value='installation') Инсталяции
 				option(value='navigation') Навигация
 				option(value='graphic_design') Графический дизайн
+			.form_title Изображения:
+			.form_images_upload
+				.form_desc_title Нажми или перетащи
 			br
 			input(type='button', class='toggle_eng', value='Перевод')
 			input(type="submit", value="Добавить")
+			br
+			br
