@@ -1,8 +1,11 @@
 extends ../../layout
 
+block content_style
+	link(rel='stylesheet', type='text/css', href='/styles/add.css')
+
 block content
 	a.back_link(href='/auth') < Назад
-	h1 Список постов
+	.title СПИСОК ПОСТОВ
 	each post in posts
 		a(href='/auth/edit/posts/' + post._id)= post.ru.title
 		br

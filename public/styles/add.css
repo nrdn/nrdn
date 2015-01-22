@@ -1,8 +1,8 @@
 .content_block {
 	/*min-height: 600px;*/
-	width: 1280px;
+	width: 1240px;
 	left: 50%;
-	margin-left: -640px;
+	margin-left: -620px;
 	position:  absolute;
 	/*background-color: red;*/
 }
