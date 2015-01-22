@@ -10,6 +10,9 @@ block content_scripts
 	script(type='text/javascript', src='/scripts/upload.js')
 
 block content
+	- var year = new Date()
+	- year = year.getFullYear()
+	- var months = ['ЯНВАРЬ', 'ФЕВРАЛЬ', 'МАРТ', 'АПРЕЛЬ', 'МАЙ', 'ИЮНЬ', 'ИЮЛЬ', 'АВГУСТ', 'СЕНТЯБРЬ', 'ОКТЯБРЬ', 'НОЯБРЬ', 'ДЕКАБРЬ']
 	.form_block
 		a.back_link(href='/auth') < Назад
 		.title РЕДАКТИРОВАТЬ РАБОТУ
@@ -26,6 +29,25 @@ block content
 			textarea(name="meta[description]", rows="8",)= work.meta.description
 			.form_title Лого:
 			input(type='text' name="logo", value=work.logo)
+			.form_title Дата:
+			- var now = new Date()
+			select(name='date[date]')
+				option(value='') День
+				- for (var i=1; i<32; i++)
+					- var day = i <= 9 ? '0' + i : i
+					option(value=i, selected=work.date.getDate() == i)= day
+			b /
+			select(name='date[month]')
+				option(value='') Месяц
+				each month, i in months
+					option(value=i, selected=work.date.getMonth() == i)= month
+			b /
+			select(name='date[year]')
+				option(value='') Год
+				option(value=year, selected=(year == now.getFullYear()))= year
+				option(value=year - 1, selected=(year - 1 == now.getFullYear()))= year - 1
+				option(value=year - 2, selected=(year - 2 == now.getFullYear()))= year - 2
+				option(value=year - 3, selected=(year - 3 == now.getFullYear()))= year - 3
 			.form_title Категория:
 			select(name='tag')
 				option(value='urbanism', selected=work.tag=='urbanism') Урбанизм

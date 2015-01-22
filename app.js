@@ -405,6 +405,7 @@ app.post('/auth/edit/works/:id', function (req, res) {
     work.ru.description = post.ru.description;
     work.meta.title = post.meta.title;
     work.meta.description = post.meta.description;
+    work.date = new Date(post.date.year, post.date.month, post.date.date);
 
     if (post.en) {
       work.en.title = post.en.title;
