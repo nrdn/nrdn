@@ -96,11 +96,10 @@
 
 .work_title {
 	margin-top: 5px;
-	/*margin-left: 23px;*/
 	width: 120px;
 	font: 9pt/11pt 'RobotoL';
+	display: block;
 	text-align: center;
-	/*position: absolute;*/
 }
 
 .work_images {
