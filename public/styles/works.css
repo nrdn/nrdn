@@ -28,6 +28,14 @@
 	/*outline: 1px solid black;*/
 }
 
+.work_item:hover .work_logo, .work_title {
+	display: none;
+}
+
+.work_item:hover .work_images {
+	display: block;
+}
+
 .work_item:nth-child(9n) {
 	margin-right: 0px;
 }

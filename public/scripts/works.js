@@ -36,10 +36,10 @@ $(document).ready(function() {
 	// 	}
 	// }
 
-	function bg_over() {
-		$(this).children('.work_logo, .work_title').hide();
-		$(this).children('.work_images').show();
-	}
+	// function bg_over() {
+		// $(this).children('.work_logo, .work_title').hide();
+		// $(this).children('.work_images').show();
+	// }
 
 	function bg_out() {
 		$work_images = $(this).find('.work_image');
@@ -48,12 +48,12 @@ $(document).ready(function() {
 
 		$work_images.css('opacity', 0).eq(rand).css('opacity', 1);
 
-		$(this).children('.work_logo, .work_title').show();
-		$(this).children('.work_images').hide();
+		// $(this).children('.work_logo, .work_title').show();
+		// $(this).children('.work_images').hide();
 	}
 
 
-	$(document).on('mouseenter', '.work_item', bg_over);
+	// $(document).on('mouseenter', '.work_item', bg_over);
 	$(document).on('mouseleave', '.work_item', bg_out);
 	// $(document).on('mousemove', '.work_item', bg_move);
 
