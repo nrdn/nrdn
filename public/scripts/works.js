@@ -37,22 +37,24 @@ $(document).ready(function() {
 	// }
 
 	function bg_over() {
-		var max = $(this).find('.work_image').length;
-		var rand = getRandom(0, max);
-		$(this).find('.work_image').hide().eq(rand).show();
-
 		$(this).children('.work_logo, .work_title').hide();
 		$(this).children('.work_images').show();
 	}
 
 	function bg_out() {
+		$work_images = $(this).find('.work_image');
+		var max = $work_images.length;
+		var rand = getRandom(0, max);
+
+		$work_images.css('opacity', 0).eq(rand).css('opacity', 1);
+
 		$(this).children('.work_logo, .work_title').show();
 		$(this).children('.work_images').hide();
 	}
 
 
-	$(document).on('mouseover', '.work_item', bg_over);
-	$(document).on('mouseout', '.work_item', bg_out);
+	$(document).on('mouseenter', '.work_item', bg_over);
+	$(document).on('mouseleave', '.work_item', bg_out);
 	// $(document).on('mousemove', '.work_item', bg_move);
 
 
