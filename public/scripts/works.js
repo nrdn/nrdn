@@ -41,7 +41,7 @@ $(document).ready(function() {
 		// $(this).children('.work_images').show();
 	// }
 
-	$('.work_images').children('.work_image').first().css('opacity', 1);
+	$('.work_images').children('.work_image').css('opacity', 0).first().css('opacity', 1);
 
 	function bg_out() {
 		$work_images = $(this).find('.work_image');
