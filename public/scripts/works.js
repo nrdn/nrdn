@@ -37,8 +37,8 @@ $(document).ready(function() {
 	// }
 
 	// function bg_over() {
-		// $(this).children('.work_logo, .work_title').hide();
-		// $(this).children('.work_images').show();
+	// 	$(this).children('.work_logo, .work_title').hide();
+	// 	$(this).children('.work_images').show();
 	// }
 
 	function bg_out() {

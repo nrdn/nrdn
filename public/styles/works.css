@@ -28,12 +28,12 @@
 	/*outline: 1px solid black;*/
 }
 
-.work_item:hover .work_logo, .work_title {
+.work_item:hover .work_logo, .work_item:hover .work_title {
 	display: none;
 }
 
 .work_item:hover .work_images {
-	display: block;
+	opacity: 1;
 }
 
 .work_item:nth-child(9n) {
@@ -104,7 +104,8 @@
 
 .work_images {
 	position: absolute;
-	display: none;
+	opacity: 0;
+	/*display: none;*/
 }
 
 .work_image {
