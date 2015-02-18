@@ -28,6 +28,15 @@ textarea {
 	display: none;
 }
 
+.old {
+  width: 400px;
+}
+
+.editor {
+  width: 800px;
+  height: 400px;
+}
+
 .img_preview {
 	width: 350px;
 	height: 200px;
