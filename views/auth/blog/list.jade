@@ -7,6 +7,6 @@ block content
 	a.back_link(href='/auth') < Назад
 	.title СПИСОК ПОСТОВ
 	each post in posts
-		a(href='/auth/edit/posts/' + post._id)= post.ru.title
+		a(href='/auth/edit/posts/' + post._id)= post.ru.title ? post.ru.title : 'Без заголовка'
 		br
 		br
