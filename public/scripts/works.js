@@ -84,7 +84,7 @@ $(document).ready(function() {
 		}
 
 		$.each(result, function(index, tag) {
-			var tags = {'urbanism':'Урбанизм', 'architecture':'Архитектура', 'urban_projects':'Городские проекты', 'exhibitions':'Выставки', 'industrial_design':'Промышленный дизайн', 'installation': 'Инсталяции', 'navigation':'Навигация', 'graphic_design':'Графический дизайн'}
+			var tags = {'urbanism':'Урбанизм', 'architecture':'Архитектура', 'urban_projects':'Специальные проекты', 'exhibitions':'Выставки', 'industrial_design':'Промышленный дизайн', 'installation': 'Инсталяции', 'navigation':'Навигация', 'graphic_design':'Графический дизайн'}
 			var tag_items = $(items).filter('.' + tag);
 			var work_tag = $('<div />', {'class':'work_tag ' + tag});
 			var work_tag_title = $('<div />', {'class':'work_tag_title', 'text':tags[tag]});

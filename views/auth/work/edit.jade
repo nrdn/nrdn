@@ -44,15 +44,15 @@ block content
 			b /
 			select(name='date[year]')
 				option(value='') Год
-				option(value=year, selected=(year == now.getFullYear()))= year
-				option(value=year - 1, selected=(year - 1 == now.getFullYear()))= year - 1
-				option(value=year - 2, selected=(year - 2 == now.getFullYear()))= year - 2
-				option(value=year - 3, selected=(year - 3 == now.getFullYear()))= year - 3
+				option(value=year, selected=(year == work.date.getFullYear()))= year
+				option(value=year - 1, selected=(year - 1 == work.date.getFullYear()))= year - 1
+				option(value=year - 2, selected=(year - 2 == work.date.getFullYear()))= year - 2
+				option(value=year - 3, selected=(year - 3 == work.date.getFullYear()))= year - 3
 			.form_title Категория:
 			select(name='tag')
 				option(value='urbanism', selected=work.tag=='urbanism') Урбанизм
 				option(value='architecture', selected=work.tag=='architecture') Архитектура
-				option(value='urban_projects', selected=work.tag=='urban_projects') Городские проекты
+				option(value='urban_projects', selected=work.tag=='urban_projects') Специальные проекты
 				option(value='exhibitions', selected=work.tag=='exhibitions') Выставки
 				option(value='industrial_design', selected=work.tag=='industrial_design') Промышленный дизайн
 				option(value='installation', selected=work.tag=='installation') Инсталяции
