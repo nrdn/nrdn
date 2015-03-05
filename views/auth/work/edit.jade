@@ -1,9 +1,13 @@
 extends ../../layout
 
 block content_style
+	link(rel='stylesheet', type='text/css', href='/styles/font-awesome.css')
+	link(rel='stylesheet', type='text/css', href='/styles/wysiwyg-editor.css')
 	link(rel='stylesheet', type='text/css', href='/styles/add.css')
 
 block content_scripts
+	script(type='text/javascript', src='/scripts/wysiwyg.js')
+	script(type='text/javascript', src='/scripts/wysiwyg-editor.js')
 	script(type='text/javascript', src='/scripts/jquery.filedrop.js')
 	script(type='text/javascript', src='/scripts/jquery-ui-1.10.4.custom.min.js')
 	script(type='text/javascript', src='/scripts/add.js')
@@ -21,12 +25,12 @@ block content
 			input.ru(type='text' name="ru[title]", value=work.ru.title)
 			input.en(type='text' name="en[title]", disabled)
 			.form_title Заголовок (мета):
-			input(type='text' name="meta[title]", value=work.meta.title)
-			.form_title Описание:
-			textarea.ru(name="ru[description]", rows="8",)= work.ru.description
-			textarea.en(name="en[description]", rows="8", disabled)
+			input.old(type='text' name="meta[title]", value=work.meta.title)
 			.form_title Описание (мета):
-			textarea(name="meta[description]", rows="8",)= work.meta.description
+			textarea.old(name="meta[description]", rows="8",)= work.meta.description
+			.form_title Описание:
+			textarea.ru.editor(name="ru[description]", rows="8",)= work.ru.description
+			//- textarea.en(name="en[description]", rows="8", disabled)
 			.form_title Лого:
 			input(type='text' name="logo", value=work.logo)
 			.form_title Дата:
