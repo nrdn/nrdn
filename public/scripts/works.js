@@ -140,7 +140,7 @@ $(document).ready(function() {
 		old_items.each(function(index, el) {
 			$('.works_block').append(el);
 		});
-		$('.work_item.archive').show().css({'opacity':0.8});
+		$('.work_item.archive').show().css({'opacity':0.4});
 
 	});
 
