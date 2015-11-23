@@ -1,5 +1,6 @@
 var old_position = 0;
 var step = 10000;
+var b = 0;
 
 function getRandom (min, max) {
 	var rand = min - 0.5 + Math.random()*(max-min)
@@ -140,7 +141,8 @@ $(document).ready(function() {
 		old_items.each(function(index, el) {
 			$('.works_block').append(el);
 		});
-		$('.work_item.archive').show().css({'opacity':0.4});
+		if (b == 0) {$('.work_item.archive').show().css({'opacity':0.4}); b = 1}
+		else {$('.work_item.archive').hide(); b = 0}
 
 	});
 
