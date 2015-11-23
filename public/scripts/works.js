@@ -137,6 +137,9 @@ $(document).ready(function() {
 		$(this).css('border-bottom','black 1px dotted');
 
 		$('.work_tag').remove();
+		old_items.each(function(index, el) {
+			$('.works_block').append(el);
+		});
 		$('.work_item.archive').show().css({'opacity':0.8});
 
 	});
