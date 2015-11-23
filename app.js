@@ -50,6 +50,7 @@ var userSchema = new Schema({
 
 var workSchema = new Schema({
   tag: String,
+  publish: String,
   logo: String,
   w_id: String,
   meta: {
@@ -213,7 +214,7 @@ app.get('/works/:id', function(req, res) {
   var id = req.params.id;
 
   Work.find({'w_id':id}).exec(function(err, work) {
-    Work.find({'tag':work.tag}).sort('-date').limit(6).exec(function(err, r_works) {
+    Work.find({'tag':work.tag, 'publish':work.publish}).sort('-date').limit(6).exec(function(err, r_works) {
       res.render('works/work.jade', {work: work[0], r_works: r_works});
     });
   });
@@ -331,6 +332,7 @@ app.post('/auth/add/work', function (req, res) {
 
   work.w_id = work._id.toString().substr(-4);
   work.tag = post.tag;
+  work.publish = post.publish;
   work.logo = post.logo;
   work.ru.title = post.ru.title;
   work.ru.description = post.ru.description;
@@ -400,6 +402,7 @@ app.post('/auth/edit/works/:id', function (req, res) {
 
   Work.findById(id, function(err, work) {
     work.tag = post.tag;
+    work.publish = post.publish;
     work.logo = post.logo;
     work.ru.title = post.ru.title;
     work.ru.description = post.ru.description;
