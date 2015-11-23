@@ -27,6 +27,10 @@
 	color: black;
 	/*outline: 1px solid black;*/
 }
+.work_item.archive {
+	display: none;
+	opacity: 0;
+}
 
 .work_item:hover .work_logo, .work_item:hover .work_title {
 	display: none;
