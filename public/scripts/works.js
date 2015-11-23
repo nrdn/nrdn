@@ -66,6 +66,7 @@ $(document).ready(function() {
 
 		var items = $('.work_item');
 		$('.work_tag').remove();
+		$('.work_item.archive').hide();
 		var arr_items_tags = [];
 
 		items.each(function(index, el) {
@@ -100,6 +101,7 @@ $(document).ready(function() {
 
 		var items = $('.work_item');
 		$('.work_tag').remove();
+		$('.work_item.archive').hide();
 		var arr_items_years = [];
 
 		items.each(function(index, el) {
@@ -127,6 +129,16 @@ $(document).ready(function() {
 		old_items.each(function(index, el) {
 			$('.works_block').append(el);
 		});
+	});
+
+
+	$('.sort_item.archive').click(function() {
+		$('.sort_item').removeAttr('style');
+		$(this).css('border-bottom','black 1px dotted');
+
+		$('.work_tag').remove();
+		$('.work_item.archive').show().css({'opacity':0.8});
+
 	});
 
 

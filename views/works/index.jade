@@ -13,7 +13,7 @@ block content
 	.content_block_inner
 		.works_block
 			each work in works
-				a.work_item(href='/works/' + work.w_id, class=work.tag + ' ' + work.date.getFullYear())
+				a.work_item(href='/works/' + work.w_id, class=work.tag + ' ' + work.date.getFullYear() + ' ' + work.publish)
 					.work_images
 						each image, i in work.images
 							- var dir_path = image.path.slice(0,38)
@@ -30,3 +30,4 @@ block content
 			.sort_item.clear Все
 			.sort_item.tags По категориям
 			.sort_item.year По годам
+			.sort_item.archive По годам
