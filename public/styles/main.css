@@ -114,7 +114,7 @@ body {
 	content: 'Народный архитектор';
 	position: absolute;
 	top: 1px;
-	width: 164px;
+	white-space: nowrap;
 	left: 25px;
 	font: 11pt/13pt 'Roboto';
 	color: #000;

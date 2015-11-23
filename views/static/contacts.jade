@@ -8,23 +8,24 @@ block content_style
 	link(rel='stylesheet', type='text/css', href='/styles/contacts.css' + version)
 
 block content_scripts
-	//-script(type='text/javascript', src='http://maps.googleapis.com/maps/api/js?key=AIzaSyDzWhF4BjQZUOautL3wOogi5GT0Ule_RH8&sensor=false')
+	script(type='text/javascript', src='http://maps.googleapis.com/maps/api/js?key=AIzaSyDzWhF4BjQZUOautL3wOogi5GT0Ule_RH8&sensor=false')
 	script(type='text/javascript', src='/scripts/static.js' + version)
-	//-script(type='text/javascript', src='/scripts/g_map.js' + version)
+	script(type='text/javascript', src='/scripts/g_map.js' + version)
 
 block content
 	.content_block_inner
-		.big_image
-		//-.map_block
+		//-.big_image
+		.map_block
 			#map-canvas
 		.about_block
 			.about_title НАРОДНЫЙ АРХИТЕКТОР
 			.about_description
-				//-p 107031 Россия, Москва, ул. Большая Дмитровка, д. 24.
-				//-p Ближайшие станции метро - Тверская, Чеховская, Пушкинская, Театральная.
+				.big_descr Москва, ул. Электрозаводская, д. 21, стр. 21
+				//-p Электрозавод «МЭЛЗ», Четвертая проходная.
+				//-p Офис 405, 4-й этаж
 				//-p +7 (495) 629-03-40 /
 				//-a(href='mailto:mail@nrdn.ru') mail@nrdn.ru
-				.big_phone +7 (495) 629-03-40
+				.big_phone +7 (495) 151 15 49
 				.big_email
 					a(href='mailto:mail@nrdn.ru') mail@nrdn.ru
 				.social_block
@@ -43,6 +44,6 @@ block content
 			.partners_title ИНФОРМАЦИОННЫЕ ПАРТНЕРЫ
 			.partners_list
 				a.patner_item(href='http://www.interior.ru/', target='_blank', style='background-image: url(images/design/partners/partner_5.jpg)')
-				a.patner_item(href='http://www.tatlin.ru/', target='_blank', style='background-image: url(images/design/partners/partner_6.jpg)')
+				//-a.patner_item(href='http://www.tatlin.ru/', target='_blank', style='background-image: url(images/design/partners/partner_6.jpg)')
 				a.patner_item(href='http://freekaliningrad.ru/', target='_blank', style='background-image: url(images/design/partners/partner_7.jpg)')
 				a.patner_item(href='http://prorus.net/', target='_blank', style='background-image: url(images/design/partners/partner_8.jpg)')
