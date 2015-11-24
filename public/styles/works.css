@@ -40,10 +40,6 @@
 	opacity: 1;
 }
 
-.work_item:nth-child(9n) {
-	margin-right: 0px;
-}
-
 .urbanism svg {
 	fill: #003ca5;
 }
