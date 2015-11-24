@@ -142,7 +142,7 @@ $(document).ready(function() {
 			$('.works_block').append(el);
 		});
 		if (b == 0) {$('.work_item.archive').show().css({'opacity':0.4}); b = 1}
-		else {$('.work_item.archive').hide(); b = 0}
+		else {$('.work_item.archive').hide(); b = 0; $(this).css('border-bottom','none')}
 
 	});
 
