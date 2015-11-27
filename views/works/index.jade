@@ -20,8 +20,10 @@ block content
 							- var img_name = image.path.split('/')[4]
 							if (i == 0)
 								.work_image(style='background-image: url(' + dir_path + '/small/' + img_name + '); ' + 'opacity: 1;' )
+								.work_image_big(style='background-image: url(' + dir_path + '/' + img_name + '); ' + 'opacity: 1;' )
 							else
 								.work_image(style='background-image: url(' + dir_path + '/small/' + img_name + '); ' + 'opacity: 0;' )
+								.work_image_big(style='background-image: url(' + dir_path + '/' + img_name + '); ' + 'opacity: 1;' )
 							//- .work_image(style='background-image: url(' + image.path + ')')
 					.work_logo
 						!=work.logo
