@@ -158,6 +158,12 @@
 	.work_item:nth-child(1) .work_image,
 	.work_item:nth-child(2) .work_image,
 	.work_item:nth-child(3) .work_image {
+		display: none;
+	}
+
+	.work_item:nth-child(1) .work_image_big,
+	.work_item:nth-child(2) .work_image_big,
+	.work_item:nth-child(3) .work_image_big {
 		width: 400px;
 		height: 400px;
 		position: absolute;
