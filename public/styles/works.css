@@ -42,21 +42,38 @@
 .work_item:nth-child(1),
 .work_item:nth-child(2),
 .work_item:nth-child(3) {
-	width: 360px;
-	height: 360px;
+	width: 400px;
+	height: 400px;
 }
-.work_item:nth-child(2),
-.work_item:nth-child(3) {
-	margin-left: 20px;
-}
+
 .work_item:nth-child(1) .work_image,
 .work_item:nth-child(2) .work_image,
 .work_item:nth-child(3) .work_image {
-	width: 360px;
-	height: 360px;
+	width: 400px;
+	height: 400px;
 	position: absolute;
 	background-size: cover;
 	background-position: center;
+}
+
+.work_item:nth-child(1) .work_logo,
+.work_item:nth-child(2) .work_logo,
+.work_item:nth-child(3) .work_logo {
+	width: 150px;
+	height: 150px;
+}
+
+.work_item:nth-child(1) .work_logo svg,
+.work_item:nth-child(2) .work_logo svg,
+.work_item:nth-child(3) .work_logo svg {
+	max-width: 150px!important;
+	max-height: 150px!important;
+}
+
+.work_item:nth-child(1) .work_title,
+.work_item:nth-child(2) .work_title,
+.work_item:nth-child(3) .work_title {
+	width: 100%;
 }
 
 .urbanism svg {
