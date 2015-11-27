@@ -45,7 +45,15 @@
 	width: 360px;
 	height: 360px;
 }
-
+.work_item:nth-child(1) .work_image,
+.work_item:nth-child(2) .work_image,
+.work_item:nth-child(3) .work_image, {
+	width: 360px;
+	height: 360px;
+	position: absolute;
+	background-size: cover;
+	background-position: center;
+}
 
 .urbanism svg {
 	fill: #003ca5;
