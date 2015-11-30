@@ -62,6 +62,7 @@ $(document).ready(function() {
 
 
 	$('.sort_item.tags').click(function() {
+		$('.works_block').removeClass('works_big');
 		$('.sort_item').removeAttr('style');
 		$(this).css('border-bottom','black 1px dotted');
 
@@ -98,6 +99,7 @@ $(document).ready(function() {
 
 	$('.sort_item.year').click(function() {
 		$('.sort_item').removeAttr('style');
+		$('.works_block').removeClass('works_big');
 		$(this).css('border-bottom','black 1px dotted');
 
 		var items = $('.work_item');
@@ -123,6 +125,7 @@ $(document).ready(function() {
 
 	$('.sort_item.clear').click(function() {
 		$('.sort_item').removeAttr('style');
+		$('.works_block').addClass('works_big');
 		$(this).css('border-bottom','black 1px dotted');
 
 		$('.work_tag').remove();
@@ -135,6 +138,7 @@ $(document).ready(function() {
 
 	$('.sort_item.archive').click(function() {
 		$('.sort_item').removeAttr('style');
+		$('.works_block').addClass('works_big');
 		$(this).css('border-bottom','black 1px dotted');
 
 		$('.work_tag').remove();
