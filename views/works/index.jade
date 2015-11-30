@@ -19,13 +19,12 @@ block content
 							- var dir_path = image.path.slice(0,38)
 							- var img_name = image.path.split('/')[4]
 							if (i === 0)
-								.work_image_big(style='background-image: url(' + dir_path + '/' + img_name + '); ' + 'opacity: 1;' )
-							else if (i === 1)
-								.work_image_big(style='background-image: url(' + dir_path + '/' + img_name + '); ' + 'opacity: 1;' )
-							else if (i === 2)
+								.work_image(style='background-image: url(' + dir_path + '/small/' + img_name + '); ' + 'opacity: 1;' )
 								.work_image_big(style='background-image: url(' + dir_path + '/' + img_name + '); ' + 'opacity: 1;' )
 							else
 								.work_image(style='background-image: url(' + dir_path + '/small/' + img_name + '); ' + 'opacity: 0;' )
+								.work_image_big(style='background-image: url(' + dir_path + '/' + img_name + '); ' + 'opacity: 1;' )
+							//- .work_image(style='background-image: url(' + image.path + ')')
 					.work_logo
 						!=work.logo
 					.work_title= work.ru.title
