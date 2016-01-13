@@ -68,6 +68,20 @@
 	background-position: 0px -64px;
 }
 
+.patner_item.no_rollout {
+	background-size: contain;
+	filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+	background-position: 50%;
+	background-repeat: no-repeat;
+}
+
+.patner_item.no_rollout:hover {
+	background-position: 50%;
+	filter: none;
+	-webkit-filter: none;
+}
+
 #map-canvas {
 	width: 1240px;
 	height: 450px;

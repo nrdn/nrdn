@@ -15,7 +15,12 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.locals.pretty = true;
 // app.use(express.favicon(__dirname + '/public/img/favicon.ico'));
+
 app.use(express.bodyParser({ keepExtensions: true, uploadDir:__dirname + '/uploads' }));
+
+app.use(express.urlencoded());
+app.use(express.json());
+
 app.use(express.methodOverride());
 app.use(express.cookieParser());
 app.use(express.session({ secret: 'keyboard cat' }));
@@ -630,5 +635,6 @@ app.get('/robots.txt', function(req, res){
 // });
 
 
-app.listen(80);
+//app.listen(80);
+app.listen(3000);
 console.log('http://127.0.0.1:3000')
